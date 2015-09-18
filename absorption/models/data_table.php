@@ -1,5 +1,4 @@
 <?php
-
 ////////////////////////////////////////////////////////////
 // Cette classe permet de récupérer les données           //
 // du site web contenant les informations météorologique. //
@@ -20,9 +19,9 @@ class DataTable {
     }
     
     //Setters
-    public setThead($thead) {$this->thead = $thead;}
-    public setTbody($tbody) {$this->tbody = $tbody;}
-    public setTfoot($tfoot) {$this->tfoot = $tfoot;}
+    public function setThead($thead) {$this->thead = $thead;}
+    public function setTbody($tbody) {$this->tbody = $tbody;}
+    public function setTfoot($tfoot) {$this->tfoot = $tfoot;}
 }
 
 ?>
