@@ -12,7 +12,7 @@
 
 #### Robin
 ------
-* Formules de calculs ..OK
+* Formules de calcul ..OK
 * CSS de la page du site ..EN COURS
 * [MODULE INFOS SUP] Implémentation des méthodes de calcul ..NON
 * [MODULE INFOS SUP] Affichage des résultats ..NON
