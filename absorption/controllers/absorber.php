@@ -24,7 +24,7 @@
     $thead = $tableauDetaille->getElementsByTagName('thead')->item(0);
     $tbody = $tableauDetaille->getElementsByTagName('tbody')->item(0);
     $tfoot = null;
-    DataTable $o_tableauDetaille = new DataTable($thead, $tbody, $tfoot);
+    //DataTable $o_tableauDetaille = new DataTable($thead, $tbody, $tfoot);
    
     
 

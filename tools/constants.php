@@ -7,7 +7,7 @@
 //Architecture relative
 define('ROOT_PATH', dirname(dirname(__FILE__)));
 define('ABSORPTION_MODULE', ROOT_PATH.'/absorption/');
-define('MONTH_DISPLAY_MODULE', ROOT_PATH.'/month_display/');
+define('GENERAL_DISPLAY_MODULE', ROOT_PATH.'/general_display/');
 define('PERIODIC_DISPLAY_MODULE', ROOT_PATH.'/periodic_display/');
 define('SEARCH_MODULE', ROOT_PATH.'/search/');
 define('WRAPPERS', ROOT_PATH.'/wrappers/');

@@ -18,16 +18,14 @@ include_once(WRAPPERS.'top.php');
 //Inclus le module de recherche
 include_once(SEARCH_MODULE.'controllers/search.php');
 
-//Inclus le module d'affichage par mois
-include_once(MONTH_DISPLAY_MODULE.'controllers/month_display.php');
-
 //Inclus le module d'affichage par période
 include_once(PERIODIC_DISPLAY_MODULE.'controllers/periodic_display.php');
+
+//Inclus le module d'affichage par mois
+include_once(GENERAL_DISPLAY_MODULE.'controllers/general_display.php');
 
 //Inclus la partie bottom du site
 include_once(WRAPPERS.'bottom.php');
 
-//Inclus home.php pour présenter les différents modules
-include_once('home.php');
 
 ?>
