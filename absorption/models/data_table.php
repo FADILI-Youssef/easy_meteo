@@ -7,9 +7,9 @@
 class DataTable {
     
     //Attributs
-    private var $thead;
-    private var $tbody;
-    private var $tfoot;
+    private $thead;
+    private $tbody;
+    private $tfoot;
     
     //Constructeur
     public function __construct($thead, $tbody, $tfoot) {

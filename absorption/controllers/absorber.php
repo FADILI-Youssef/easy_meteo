@@ -6,8 +6,8 @@
 ///////////////////////////////////////////////////////////////////////////////
 
     //Inclus les fichiers dont tu as besoin
-    include_once('../models/data_table.php');
-
+    include_once(ABSORPTION_MODULE.'models/data_table.php');
+    
     //Récupère le code HTML de la page
     $pageCode = file_get_contents(WEB_SITE_SOURCE.'paris-orly/2015-09-17');
 
@@ -24,8 +24,6 @@
     $thead = $tableauDetaille->getElementsByTagName('thead')->item(0);
     $tbody = $tableauDetaille->getElementsByTagName('tbody')->item(0);
     $tfoot = null;
-    //DataTable $o_tableauDetaille = new DataTable($thead, $tbody, $tfoot);
-   
-    
+    $o_tableauDetaille = new DataTable($thead, $tbody, $tfoot);
 
 ?>
