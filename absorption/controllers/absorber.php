@@ -47,6 +47,6 @@
         } else $day++;
         
     }
-    $list_dataTable[0]->getTemperatures();
+    echo $list_dataTable[0]->getTemperatures();
 
 ?>
