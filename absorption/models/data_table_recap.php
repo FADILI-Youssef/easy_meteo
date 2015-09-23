@@ -6,8 +6,8 @@ class DataTableRecap extends DataTable {
     private $COLONNE_DUREE_INSOLATION = 4;
 
     //Constructeur
-    public function __construct($date, $thead, $tbody, $tfoot) {
-        parent::__construct($date, $thead, $tbody, $tfoot);
+    public function __construct() {
+        parent::__construct();
         $this->COLONNES_NOMBRE = 8;
         $this->LIGNES_NOMBRE = 1;
         $this->DONNEES_NOMBRE = 8;

@@ -11,9 +11,7 @@
 include_once('tools/constants.php');
 
 //Inclusion des modèles
-include_once(ABSORPTION_MODULE.'models/data_table.php');
-include_once(ABSORPTION_MODULE.'models/data_table_details.php');
-include_once(ABSORPTION_MODULE.'models/data_table_recap.php');
+foreach (glob(ABSORPTION_MODULE.'models/*.php') as $filename) include_once($filename);
 
 //Inclus la partie top du site
 include_once(WRAPPERS.'top.php');

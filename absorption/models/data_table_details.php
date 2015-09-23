@@ -11,8 +11,8 @@ class DataTableDetails extends DataTable {
     private $COLONNE_VITESSE_VENT = 5;
     
     //Constructeur
-    public function __construct($date, $thead, $tbody, $tfoot) {
-        parent::__construct($date, $thead, $tbody, $tfoot);
+    public function __construct() {
+        parent::__construct();
         $this->COLONNES_NOMBRE = 14;
         $this->LIGNES_NOMBRE = 24;
         $this->DONNEES_NOMBRE = 336;

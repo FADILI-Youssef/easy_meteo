@@ -18,12 +18,7 @@ abstract class DataTable {
     protected $_tfoot;
     
     //Constructeur
-    public function __construct($date, $thead, $tbody, $tfoot) {
-        $this->setDate($date);
-        $this->setThead($thead);
-        $this->setTbody($tbody);
-        $this->setTfoot($tfoot);
-    }
+    public function __construct() {}
     
     //Setters
     public function setThead($thead) {$this->_thead = $thead;}

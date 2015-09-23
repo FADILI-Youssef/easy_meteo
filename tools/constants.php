@@ -17,4 +17,9 @@ define('WEB_SITE_SOURCE', 'http://www.prevision-meteo.ch/climat/horaire/');
 define('INDICE_TABLEAU_DETAILLE', '1');
 define('INDICE_TABLEAU_RECAP', '2');
 
+//Codes pour les factory pattern
+define('F_DATA_TABLE_DETAILS', '0');
+define('F_DATA_TABLE_RECAP', '1');
+
+
 ?>

@@ -11,7 +11,9 @@
     $year = 2010;
     $list_dataTableDetails = array();
     $list_dataTableRecap = array();
+    $dataTableFactory = DataTableFactory::getInstance();
 
+    //Traitement du fichier
     while ( $day.'-'.$month.'-'.$year != '2-1-2010' ) {
         
         //Récupère le code HTML de la page
@@ -26,18 +28,22 @@
             //Récupère les deux tableaux qui nous intéressent
             $tableauDetaille = $domTool->getElementsByTagName('table')->item(INDICE_TABLEAU_DETAILLE);
             $tableauRecap = $domTool->getElementsByTagName('table')->item(INDICE_TABLEAU_RECAP);
-
+            
             //Instancie un objet DataTableDetails
-            $details_thead = $tableauDetaille->getElementsByTagName('thead')->item(0);
-            $details_tbody = $tableauDetaille->getElementsByTagName('tbody')->item(0);
-            $details_tfoot = null;
-            array_push($list_dataTableDetails, new DataTableDetails('a', $details_thead, $details_tbody, $details_tfoot));
+            $o_dataTableDetails = $dataTableFactory->getDataTable(F_DATA_TABLE_DETAILS);
+            $o_dataTableDetails->setDate('date');
+            $o_dataTableDetails->setThead($tableauDetaille->getElementsByTagName('thead')->item(0));
+            $o_dataTableDetails->setTbody($tableauDetaille->getElementsByTagName('tbody')->item(0));
+            $o_dataTableDetails->setTfoot(null);     
+            array_push($list_dataTableDetails, $o_dataTableDetails);
             
             //Instancie un objet DataTableRecap
-            $recap_thead = $tableauRecap->getElementsByTagName('thead')->item(0);
-            $recap_tbody = $tableauRecap->getElementsByTagName('tbody')->item(0);
-            $recap_tfoot = null;
-            array_push($list_dataTableRecap, new DataTableRecap('a', $recap_thead, $recap_tbody, $recap_tfoot));
+            $o_dataTableRecap = $dataTableFactory->getDataTable(F_DATA_TABLE_RECAP);
+            $o_dataTableRecap->setDate('date');
+            $o_dataTableRecap->setThead($tableauRecap->getElementsByTagName('thead')->item(0));
+            $o_dataTableRecap->setTbody($tableauRecap->getElementsByTagName('tbody')->item(0));
+            $o_dataTableRecap->setTfoot(null);
+            array_push($list_dataTableRecap, $o_dataTableRecap);
         }
         
         
