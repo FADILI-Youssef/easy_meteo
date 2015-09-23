@@ -9,7 +9,8 @@
     $day = 1;
     $month = 1;
     $year = 2010;
-    $list_dataTable = array();
+    $list_dataTableDetails = array();
+    $list_dataTableRecap = array();
 
     while ( $day.'-'.$month.'-'.$year != '2-1-2010' ) {
         
@@ -26,12 +27,19 @@
             $tableauDetaille = $domTool->getElementsByTagName('table')->item(INDICE_TABLEAU_DETAILLE);
             $tableauRecap = $domTool->getElementsByTagName('table')->item(INDICE_TABLEAU_RECAP);
 
-            //Instancie un objet DataTable pour le premier tableau
-            $thead = $tableauDetaille->getElementsByTagName('thead')->item(0);
-            $tbody = $tableauDetaille->getElementsByTagName('tbody')->item(0);
-            $tfoot = null;
-            array_push($list_dataTable, new DataTableDetails('a', $thead, $tbody, $tfoot));
+            //Instancie un objet DataTableDetails
+            $details_thead = $tableauDetaille->getElementsByTagName('thead')->item(0);
+            $details_tbody = $tableauDetaille->getElementsByTagName('tbody')->item(0);
+            $details_tfoot = null;
+            array_push($list_dataTableDetails, new DataTableDetails('a', $details_thead, $details_tbody, $details_tfoot));
+            
+            //Instancie un objet DataTableRecap
+            $recap_thead = $tableauRecap->getElementsByTagName('thead')->item(0);
+            $recap_tbody = $tableauRecap->getElementsByTagName('tbody')->item(0);
+            $recap_tfoot = null;
+            array_push($list_dataTableRecap, new DataTableRecap('a', $recap_thead, $recap_tbody, $recap_tfoot));
         }
+        
         
         //Change la date
         if ($day == 31) {
@@ -43,8 +51,10 @@
         } else $day++;
         
     }
-    echo $list_dataTable[0]->getTemperatures();
+    echo $list_dataTableDetails[0]->getTemperatures();
     echo '<br />';
-    echo $list_dataTable[0]->getVitessesVent();
+    echo $list_dataTableDetails[0]->getVitessesVent();
+    echo '<br />';
+    echo $list_dataTableRecap[0]->getDureeInsolation();
 
 ?>

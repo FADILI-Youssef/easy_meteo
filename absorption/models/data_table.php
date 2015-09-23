@@ -48,7 +48,7 @@ abstract class DataTable {
             } else array_push($temp, $data->item($i)->nodeValue);
         }
            
-        return $table2D;  
+        return $table2D;
     }
     
 }
