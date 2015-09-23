@@ -9,6 +9,8 @@ class DataTable {
     //Données
     private $COLONNE_TEMPERATURE = 1;
     private $COLONNE_VITESSE_VENT = 5;
+    private $COLONNE_NOMBRE = 14;
+    private $DONNEES_NOMBRE = 336;
     
     //Attributs
     private $_date;
@@ -36,13 +38,28 @@ class DataTable {
     //Méthodes
     public function getTemperatures() {
         $temperatures = '';
-        $tableLines = $this->getTbody()->getElementsByTagName('tr');
-        echo count(tableLines->item(0));
-        /*for ($i = 0, $l = count($tableLines); $i < $l; $i++)
-            for ($j = 0, $k = count(tableLines->item($i)); $j < $k; $j++)
-                $temperatures .= tableLines[$i]->getElementsByTagName('td')->item($COLONNE_TEMPERATURE).';';*/
+        
+        $this->splitData();
         
         return $temperatures;
+    }
+    
+    //Renvoie toutes les données sous forme d'un tableau a deux dimensions
+    public function splitData() {
+        
+        $data = $this->getTbody()->getElementsByTagName('td');
+        $table2D = array();
+        $temp = array();
+        
+        for ($i = 0; $i < $this->DONNEES_NOMBRE; $i++) {
+            if ( (($i %  $this->COLONNE_NOMBRE) == 0) && ($i > 0) ) {
+                array_push($table2D, $temp);
+                $temp = array();
+            } else array_push($temp, $data->item($i)->nodeValue);
+        }
+        var_dump($table2D);    
+        return $table2D;
+    
     }
    
 }
