@@ -4,20 +4,18 @@
 // du site web contenant les informations météorologique. //
 ////////////////////////////////////////////////////////////
 
-class DataTable {
+abstract class DataTable {
     
     //Données
-    private $COLONNE_TEMPERATURE = 1;
-    private $COLONNE_VITESSE_VENT = 5;
-    private $COLONNES_NOMBRE = 14;
-    private $LIGNES_NOMBRE = 24;
-    private $DONNEES_NOMBRE = 336;
+    protected $LIGNES_NOMBRE;
+    protected $COLONNES_NOMBRE;
+    protected $DONNEES_NOMBRE;
     
     //Attributs
-    private $_date;
-    private $_thead;
-    private $_tbody;
-    private $_tfoot;
+    protected $_date;
+    protected $_thead;
+    protected $_tbody;
+    protected $_tfoot;
     
     //Constructeur
     public function __construct($date, $thead, $tbody, $tfoot) {
@@ -36,18 +34,6 @@ class DataTable {
     //Getters
     public function getTbody() {return $this->_tbody;}
     
-    //Récupère la liste des températures et mets les en forme pour la base de données
-    public function getTemperatures() {
-        $temperatures = '';
-        
-        $table2D = $this->splitData();
-        
-        for ($i = 0; $i < $this->LIGNES_NOMBRE; $i++)
-                $temperatures .= $table2D[$i][$this->COLONNE_TEMPERATURE].';';
-        
-        return $temperatures;
-    }
-    
     //Renvoie toutes les données sous forme d'un tableau a deux dimensions
     public function splitData() {
         
@@ -64,7 +50,7 @@ class DataTable {
            
         return $table2D;  
     }
-   
+    
 }
 
 ?>

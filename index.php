@@ -6,14 +6,20 @@
 //      - d'assembler les différents modules du site web  //
 ////////////////////////////////////////////////////////////
 
+
 //Inclus le fichier constants.php
 include_once('tools/constants.php');
 
-//Inclus le module d'absorbtion de données
-include_once(ABSORPTION_MODULE.'controllers/absorber.php');
+//Inclusion des modèles
+include_once(ABSORPTION_MODULE.'models/data_table.php');
+include_once(ABSORPTION_MODULE.'models/data_table_details.php');
+include_once(ABSORPTION_MODULE.'models/data_table_recap.php');
 
 //Inclus la partie top du site
 include_once(WRAPPERS.'top.php');
+
+//Inclus le module d'absorbtion de données
+include_once(ABSORPTION_MODULE.'controllers/absorber.php');
 
 //Inclus le module de recherche
 include_once(SEARCH_MODULE.'controllers/search.php');

@@ -5,10 +5,6 @@
 //              http://www.prevision-meteo.ch/climat/journalier/station/date  //
 ////////////////////////////////////////////////////////////////////////////////
 
-    //Inclus les fichiers dont tu as besoin
-    include_once(ABSORPTION_MODULE.'models/data_table.php');
-    
-    
     //Variables  
     $day = 1;
     $month = 1;
@@ -34,7 +30,7 @@
             $thead = $tableauDetaille->getElementsByTagName('thead')->item(0);
             $tbody = $tableauDetaille->getElementsByTagName('tbody')->item(0);
             $tfoot = null;
-            array_push($list_dataTable, new DataTable('a', $thead, $tbody, $tfoot));
+            array_push($list_dataTable, new DataTableDetails('a', $thead, $tbody, $tfoot));
         }
         
         //Change la date
@@ -48,5 +44,7 @@
         
     }
     echo $list_dataTable[0]->getTemperatures();
+    echo '<br />';
+    echo $list_dataTable[0]->getVitessesVent();
 
 ?>
