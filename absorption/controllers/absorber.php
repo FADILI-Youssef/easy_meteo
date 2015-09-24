@@ -57,7 +57,7 @@
         } else $day++;
         
     }
-    var_dump($list_dataTableDetails[0];
+    echo $list_dataTableDetails[0];
     echo '<br />';
     echo $list_dataTableDetails[0];
     echo '<br />';
