@@ -14,7 +14,7 @@
     $dataTableFactory = DataTableFactory::getInstance();
 
     //Traitement du fichier
-    while ( $day.'-'.$month.'-'.$year != '2-1-2010' ) {
+    while ( $day.'-'.$month.'-'.$year != '1-12-2010' ) {
         
         //Récupère le code HTML de la page
         $pageCode = file_get_contents(WEB_SITE_SOURCE.'paris-orly/'.$year.'-'.$month.'-'.$day); //Format date : yyyy-m-j
@@ -58,7 +58,9 @@
         
     }
 
-    DataTableDao::getInstance()->addClimat($list_dataTableDetails[0], $list_dataTableRecap[0]);
+    $dataTableDao = DataTableDao::getInstance();
+    for ($i = 0, $l = count($list_dataTableDetails); $i < $l; $i++)
+        $dataTableDao->addClimat($list_dataTableDetails[$i], $list_dataTableRecap[$i]);
     
 
 ?>
