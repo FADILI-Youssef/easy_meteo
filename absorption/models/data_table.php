@@ -51,8 +51,8 @@ abstract class DataTable {
     //toString
     public function __toString() {
         
-        return  '[ID] : '.$this->id.'<br />'.
-                '[DATE] : '.$this->_date.'<br />';
+        return  '[ID] : '.($this->id != null)?$this->id:'NO ID'.'<br />'.
+                '[DATE] : '.$this->_date->format('Y-m-d').'<br />';
     }
     
 }
