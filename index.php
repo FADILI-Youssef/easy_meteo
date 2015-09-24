@@ -7,11 +7,14 @@
 ////////////////////////////////////////////////////////////
 
 
-//Inclus le fichier constants.php
-include_once('tools/constants.php');
+//Inclus les fichiers tools
+foreach (glob('tools/*.php') as $filename) include_once($filename); ;
 
 //Inclusion des modèles
 foreach (glob(ABSORPTION_MODULE.'models/*.php') as $filename) include_once($filename);
+
+//Inclusion des daos
+foreach (glob(ABSORPTION_MODULE.'daos/*.php') as $filename) include_once($filename);
 
 //Inclus la partie top du site
 include_once(WRAPPERS.'top.php');

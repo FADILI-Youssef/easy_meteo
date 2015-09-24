@@ -57,10 +57,8 @@
         } else $day++;
         
     }
-    echo $list_dataTableDetails[0];
-    echo '<br />';
-    echo $list_dataTableDetails[0];
-    echo '<br />';
-    echo $list_dataTableRecap[0];
+
+    DataTableDao::getInstance()->addClimat($list_dataTableDetails[0], $list_dataTableRecap[0]);
+    
 
 ?>

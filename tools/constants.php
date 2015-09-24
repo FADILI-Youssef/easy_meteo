@@ -12,6 +12,12 @@ define('PERIODIC_DISPLAY_MODULE', ROOT_PATH.'/periodic_display/');
 define('SEARCH_MODULE', ROOT_PATH.'/search/');
 define('WRAPPERS', ROOT_PATH.'/wrappers/');
 
+//Connexion base de données
+define('DB_SERVER', 'localhost');
+define('DB_NAME', 'easy_meteo');
+define('DB_USER', 'root');
+define('DB_PASS', 'bismiAllah');
+
 //Site web d'où sont tirée les données + constantes pour site
 define('WEB_SITE_SOURCE', 'http://www.prevision-meteo.ch/climat/horaire/');
 define('INDICE_TABLEAU_DETAILLE', '1');

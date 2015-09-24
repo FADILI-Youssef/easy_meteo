@@ -14,6 +14,7 @@ abstract class DataTable {
     //Attributs
     protected $_id;
     protected $_date;
+    protected $_idStation;
     protected $_thead;
     protected $_tbody;
     protected $_tfoot;
@@ -24,12 +25,14 @@ abstract class DataTable {
     //Setters
     public function setId($id) {$this->_id = $id;}
     public function setDate($date) {$this->_date = $date;}
+    public function setIdStation($idStation) {$this->_idStation = $idStation;}
     public function setThead($thead) {$this->_thead = $thead;}
     public function setTbody($tbody) {$this->_tbody = $tbody;}
     public function setTfoot($tfoot) {$this->_tfoot = $tfoot;}
     
     //Getters
     public function getTbody() {return $this->_tbody;}
+    public function getDate() {return $this->_date;}
     
     //Renvoie toutes les données sous forme d'un tableau a deux dimensions
     public function splitData() {
@@ -52,7 +55,8 @@ abstract class DataTable {
     public function __toString() {
         
         return  '[ID] : '.$this->_id.'<br />'.
-                '[DATE] : '.$this->_date->format('Y-m-d').'<br />';
+                '[DATE] : '.$this->_date->format('Y-m-d').'<br />'.
+                '[ID STATION]'.$this->_idStation;
     }
     
 }
