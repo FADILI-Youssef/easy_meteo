@@ -14,10 +14,10 @@ class DataTableFactory {
     
     public static function getInstance() {
      
-        if ($instance == null)
-            $instance = new DataTableFactory();
+        if (self::$instance == null)
+            self::$instance = new DataTableFactory();
         
-        return $instance;
+        return self::$instance;
     }
 
     //Pattern factory
