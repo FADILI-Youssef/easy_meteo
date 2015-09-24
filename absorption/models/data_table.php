@@ -12,6 +12,7 @@ abstract class DataTable {
     protected $DONNEES_NOMBRE;
     
     //Attributs
+    protected $_id;
     protected $_date;
     protected $_thead;
     protected $_tbody;
@@ -21,10 +22,11 @@ abstract class DataTable {
     public function __construct() {}
     
     //Setters
+    public function setId($id) {$this->_id = $id;}
+    public function setDate($date) {$this->_date = $date;}
     public function setThead($thead) {$this->_thead = $thead;}
     public function setTbody($tbody) {$this->_tbody = $tbody;}
     public function setTfoot($tfoot) {$this->_tfoot = $tfoot;}
-    public function setDate($date) {$this->_date = $date;}
     
     //Getters
     public function getTbody() {return $this->_tbody;}
@@ -44,6 +46,13 @@ abstract class DataTable {
         }
            
         return $table2D;
+    }
+    
+    //toString
+    public function __toString() {
+        
+        return  '[ID] : '.$this->id.'<br />'.
+                '[DATE] : '.$this->_date.'<br />';
     }
     
 }

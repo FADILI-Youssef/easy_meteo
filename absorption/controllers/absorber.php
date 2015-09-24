@@ -31,7 +31,7 @@
             
             //Instancie un objet DataTableDetails
             $o_dataTableDetails = $dataTableFactory->getDataTable(F_DATA_TABLE_DETAILS);
-            $o_dataTableDetails->setDate('date');
+            $o_dataTableDetails->setDate(new DateTime($year.'-'.$month.'-'.$day));
             $o_dataTableDetails->setThead($tableauDetaille->getElementsByTagName('thead')->item(0));
             $o_dataTableDetails->setTbody($tableauDetaille->getElementsByTagName('tbody')->item(0));
             $o_dataTableDetails->setTfoot(null);     
@@ -39,7 +39,7 @@
             
             //Instancie un objet DataTableRecap
             $o_dataTableRecap = $dataTableFactory->getDataTable(F_DATA_TABLE_RECAP);
-            $o_dataTableRecap->setDate('date');
+            $o_dataTableRecap->setDate(new DateTime($year.'-'.$month.'-'.$day));
             $o_dataTableRecap->setThead($tableauRecap->getElementsByTagName('thead')->item(0));
             $o_dataTableRecap->setTbody($tableauRecap->getElementsByTagName('tbody')->item(0));
             $o_dataTableRecap->setTfoot(null);
@@ -57,10 +57,10 @@
         } else $day++;
         
     }
-    echo $list_dataTableDetails[0]->getTemperatures();
+    var_dump($list_dataTableDetails[0];
     echo '<br />';
-    echo $list_dataTableDetails[0]->getVitessesVent();
+    echo $list_dataTableDetails[0];
     echo '<br />';
-    echo $list_dataTableRecap[0]->getDureeInsolation();
+    echo $list_dataTableRecap[0];
 
 ?>
