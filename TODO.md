@@ -3,8 +3,9 @@
 * Mise en place du GIT ...OK
 * Squelette du site ..OK
 * [MODULE ABSORBTION] Implémentation des classes métier ..OK
-* [MODULE ABSORBTION] Récupération des données à partir du site ..EN COURS
-* [MODULE ABSORBTION] Enregistrement des données récupérées dans la BdD ..NON
+* [MODULE ABSORBTION] Récupération des données à partir du site ..OK
+* [MODULE ABSORBTION] Enregistrement des données récupérées dans la BdD ..EN COURS
+* Système carroussel ..NON
 
 -
 -
