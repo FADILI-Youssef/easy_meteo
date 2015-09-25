@@ -41,7 +41,7 @@
                 //Instancie un objet DataTableDetails
                 $o_dataTableDetails = $dataTableFactory->getDataTable(F_DATA_TABLE_DETAILS);
                 $o_dataTableDetails->setDate(new DateTime($year.'-'.$month.'-'.$day));
-                $o_dataTableDetails->setIdStation($station->getId());
+                $o_dataTableDetails->setStation($station);
                 $o_dataTableDetails->setThead($tableauDetaille->getElementsByTagName('thead')->item(0));
                 $o_dataTableDetails->setTbody($tableauDetaille->getElementsByTagName('tbody')->item(0));
                 $o_dataTableDetails->setTfoot(null);     
@@ -50,7 +50,7 @@
                 //Instancie un objet DataTableRecap
                 $o_dataTableRecap = $dataTableFactory->getDataTable(F_DATA_TABLE_RECAP);
                 $o_dataTableRecap->setDate(new DateTime($year.'-'.$month.'-'.$day));
-                $o_dataTableRecap->setIdStation($station->getId());
+                $o_dataTableRecap->setStation($station);
                 $o_dataTableRecap->setThead($tableauRecap->getElementsByTagName('thead')->item(0));
                 $o_dataTableRecap->setTbody($tableauRecap->getElementsByTagName('tbody')->item(0));
                 $o_dataTableRecap->setTfoot(null);
