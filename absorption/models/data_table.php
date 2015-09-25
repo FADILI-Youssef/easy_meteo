@@ -33,6 +33,7 @@ abstract class DataTable {
     //Getters
     public function getTbody() {return $this->_tbody;}
     public function getDate() {return $this->_date;}
+    public function getIdStation() {return $this->_idStation;}
     
     //Renvoie toutes les données sous forme d'un tableau a deux dimensions
     public function splitData() {
