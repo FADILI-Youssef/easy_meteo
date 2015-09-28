@@ -17,7 +17,7 @@
 
     //Récupères les données concernant les différentes stations
     foreach ($stations as $station) {
-        
+    
         $day = 1;
         $month = 1;
         $year = 2010;
