@@ -12,6 +12,9 @@ define('PERIODIC_DISPLAY_MODULE', ROOT_PATH.'/periodic_display/');
 define('SEARCH_MODULE', ROOT_PATH.'/search/');
 define('WRAPPERS', ROOT_PATH.'/wrappers/');
 
+//Dossier de ressources
+define('RESOURCES', ROOT_PATH.'/resources/');
+
 //Connexion base de données
 define('DB_SERVER', 'localhost');
 define('DB_NAME', 'easy_meteo');
@@ -26,6 +29,5 @@ define('INDICE_TABLEAU_RECAP', '2');
 //Codes pour les factory pattern
 define('F_DATA_TABLE_DETAILS', '0');
 define('F_DATA_TABLE_RECAP', '1');
-
 
 ?>

@@ -20,7 +20,7 @@ abstract class DataTable {
     protected $_tfoot;
     
     //Constructeur
-    public function __construct() {}
+    protected function __construct() {}
     
     //Setters
     public function setId($id) {$this->_id = $id;}

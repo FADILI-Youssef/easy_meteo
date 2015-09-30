@@ -22,7 +22,7 @@
         $month = 1;
         $year = 2010;
         
-        while ( $day.'-'.$month.'-'.$year != '1-2-2010' ) {
+        while ( $day.'-'.$month.'-'.$year != '1-1-2010' ) {
 
             //Récupère le code HTML de la page
             $pageCode = file_get_contents(WEB_SITE_SOURCE.$station->getNom().'/'.$year.'-'.$month.'-'.$day); //Format date : yyyy-m-j

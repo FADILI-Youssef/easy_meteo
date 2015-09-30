@@ -1,0 +1,132 @@
+html, body {
+   
+    margin: 0px;
+    font-family: 'Helvetica', Arial, sans-serif;
+}
+
+header {
+
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    background-color: black;
+}
+
+nav {
+    
+    position: absolute;
+    width: 100%;
+    min-width: 900px;
+    background-color: transparent;
+    z-index: 2;
+}
+
+#logo {
+
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    padding: 15px;
+}
+
+nav table a {
+
+    display: block;
+    text-decoration: none;
+}
+
+nav table a li {
+
+    list-style-type: none;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 15px;
+    color: wheat;
+    font-weight: bold;
+    transition: color 0.7s;
+    
+}
+
+nav table {
+
+    display: block;
+    float: right;
+}
+
+nav table td {
+
+    padding: 20px;
+}
+
+/*Effet navigation*/
+nav table a::after, nav table a::before {
+    
+    position: absolute;
+    width: 80px;
+    height: 2px;
+    background-color: wheat;
+    content: '';
+    opacity: 0;
+    transition: opacity 0.7s, transform 0.7s, color 0.7s;
+}
+
+nav table a:hover::before {
+    
+    color: red;
+    opacity: 1;
+    transform: translateY(10px);
+}
+
+nav table a:hover::after {
+    
+    color: red;
+    opacity: 1;
+    transform: translateY(-10px);
+}
+
+#presentation {
+
+    width: 100%;
+    height: 100%;
+}
+
+#presentation #background {
+    
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(../wallpapers/hotballoon_bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.3;
+    z-index: 1;
+}
+
+#presentation_text {
+
+    position: relative;
+    display: block;
+    margin: auto;
+    width: 60%;
+    height: 40%;
+    top: 45%;
+    text-align: center;
+    z-index: 2;
+}
+
+#presentation_text h1 {
+    
+    text-transform: uppercase;
+    color: white;
+    font-size: 50px;
+    font-weight: normal;
+    text-shadow: 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black, 2px 2px black, -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black;
+}
+
+#presentation_text h2 {
+    
+    color: white;
+    font-size: 18px;
+    text-shadow: 1px 0 0 black, -1px 0 0 black, 0 1px 0 black, 0 -1px 0 black, 1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
+}
