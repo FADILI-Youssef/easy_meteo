@@ -41,7 +41,8 @@ nav table a li {
     list-style-type: none;
     letter-spacing: 1px;
     text-transform: uppercase;
-    padding: 15px;
+    padding-top: 20px;
+    padding-bottom: 15px;
     color: wheat;
     font-weight: bold;
     transition: color 0.7s;
@@ -56,14 +57,18 @@ nav table {
 
 nav table td {
 
+    width: 120px;
     padding: 20px;
+    text-align: center;
 }
 
 /*Effet navigation*/
 nav table a::after, nav table a::before {
     
     position: absolute;
-    width: 80px;
+    display: block;
+    text-align: center;
+    width: 120px;
     height: 2px;
     background-color: wheat;
     content: '';
