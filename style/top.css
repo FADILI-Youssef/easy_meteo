@@ -12,7 +12,7 @@ header {
     background-color: black;
 }
 
-nav {
+header nav {
     
     position: absolute;
     width: 100%;
@@ -30,13 +30,13 @@ nav {
     padding: 15px;
 }
 
-nav table a {
+header nav table a {
 
     display: block;
     text-decoration: none;
 }
 
-nav table a li {
+header nav table a li {
 
     list-style-type: none;
     letter-spacing: 1px;
@@ -49,13 +49,13 @@ nav table a li {
     
 }
 
-nav table {
+header nav table {
 
     display: block;
     float: right;
 }
 
-nav table td {
+header nav table td {
 
     width: 120px;
     padding: 20px;
@@ -63,7 +63,7 @@ nav table td {
 }
 
 /*Effet navigation*/
-nav table a::after, nav table a::before {
+header nav table a::after, nav table a::before {
     
     position: absolute;
     display: block;
@@ -76,14 +76,14 @@ nav table a::after, nav table a::before {
     transition: opacity 0.7s, transform 0.7s, color 0.7s;
 }
 
-nav table a:hover::before {
+header nav table a:hover::before {
     
     color: red;
     opacity: 1;
     transform: translateY(10px);
 }
 
-nav table a:hover::after {
+header nav table a:hover::after {
     
     color: red;
     opacity: 1;

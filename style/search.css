@@ -12,12 +12,14 @@
     color: #333;
     font-style: normal;
     font-weight: 200;
-    font-size: 50px;
+    font-size: 1.5em;
 }
 
 
 #submit_to_periodic_display {
 
+    display: block;
+    margin: auto;
     padding: 10px;
     font-size: 16px;
     border-radius: 5px;
@@ -28,27 +30,24 @@
     background-image: linear-gradient(#8add6d, #60b044);
     border-color: #5ca941;
     vertical-align: middle;
-}
-
-span {
+    cursor: pointer;
+    margin-top: 10px;
     
-    display: block;
-    margin: 5px;
 }
 
-select {
+#formulaire_recherche select {
 
     display: inline-block;
     width: 200px;
-    height: 24px;
-    line-height: 24px;
+    height: 31px;
+    padding: 5px;
     border-top-right-radius: 3px;
-    border-bottom-right-radius: 3px;
-    
+    border-bottom-right-radius: 3px;  
     font-size: 16px;
+    vertical-align: middle;
 }
 
-input[type="text"] {
+#formulaire_recherche input[type="text"] {
 
     display: inline-block;
     width: 200px;
@@ -61,22 +60,25 @@ input[type="text"] {
     vertical-align: middle;
 }
 
-input[type="number"] {
+#formulaire_recherche input[type="number"] {
     
     display: inline-block;
+    padding: 5px;
     padding-left: 10px;
     font-size: 16px;
-    height: 30px;
+    width: 60px;
+    height: 31px;
     border: solid thin gray;
     border-top-right-radius: 3px;
     border-bottom-right-radius: 3px;
+    vertical-align: middle;
 }
 
-label {
+#formulaire_recherche label {
 
     display: inline-block;
     vertical-align: middle;
-    height: 25px;
+    height: 19px;
     padding: 5px;
     font-size: 16px;
     border: solid thin #377D6A;
@@ -84,4 +86,27 @@ label {
     border-bottom-left-radius: 3px;
     color: white;
     background-color: #7AB893;
+    text-align: right;
 }
+
+#formulaire_recherche table {
+    
+    transform: translateY(18%);
+    margin: auto;
+}
+
+
+#formulaire_recherche table td {
+    
+    border: none;
+    border-collapse: collapse;
+    padding: 0;
+    margin: 0;
+    padding-bottom: 5px;
+}
+
+#formulaire_recherche table td:nth-child(odd) {
+
+    text-align: right;
+}
+

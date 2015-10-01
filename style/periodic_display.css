@@ -1,6 +1,79 @@
 #periodic_display {
 
     height: 100%;
-    background-color: bisque;
+    background-color: wheat;
 
+}
+
+#periodic_display h2 {
+
+    width: 100%;
+    font-size: 1.5em;
+    margin: 0px;
+    text-transform: uppercase;
+    color: dimgrey;
+    font-style: normal;
+    font-weight: 200;
+    padding-top: 20px;  
+    text-align: center;
+}
+
+#periodic_display #background {
+
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(../wallpapers/periodic_display_wallpaper.jpeg);
+    opacity: 0.3;
+    z-index: 0;
+}
+
+#periodic_display #menu a span {
+
+    height: 24px;
+    text-decoration: none;
+    vertical-align: top;
+    
+}
+
+#periodic_display #menu a span {
+
+    vertical-align: bottom;
+}
+
+#periodic_display #menu a span, #periodic_display #menu a i {
+    
+    display: inline-block;
+    color: dimgrey;
+}
+
+#periodic_display #content{
+
+    position: relative;
+    text-align: center;
+    z-index: 2;
+}
+
+#periodic_display #carousel, #periodic_display #menu {
+    
+    display: inline-block;
+}
+
+#periodic_display #carousel {
+
+    position: relative;
+    display: block;
+    width: 70%;
+    height: 60%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border: solid thin black;
+}
+
+#periodic_display #menu a {
+
+    margin-right: 10px;
+    margin-left: 10px;
 }

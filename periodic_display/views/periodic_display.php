@@ -1,18 +1,31 @@
 <section id="periodic_display">
-    <!-- Titre -->
-    <h2>AFFICHAGE PAR PÉRIODE</h2>
     
-    <!-- Bouton avant -->
-    <div id="bouton_avant"></div>
+    <div id="background"></div>
     
-    <!-- Affichage des informations -->
-    <div id="informations_periode">
-        <div id="fiche_gauche"></div>
-        <div id="fiche_centre"></div>
-        <div id="fiche_droite"></div>
+    
+    <div id="content">
+        
+        <!-- Titre -->
+        <h2>affichage par période</h2>
+        
+        <!-- Bouton avant -->
+        <div id="bouton_avant"></div>
+
+        <!-- Affichage des informations -->
+        <div id="carousel">
+        </div>
+
+        <div id="menu">
+            <a class="scrollTo" href="#formulaire_recherche">
+                <i class="material-icons">search</i><span>modifier la recherche</span>
+            </a>
+            <a class="scrollTo" href="#general_display">
+                <span>informations générales</span><i class="material-icons">arrow_forward</i>
+            </a>
+        </div>
+
+        <!-- Bouton après -->
+        <div id="bouton_apres"></div>
     </div>
-    
-    <!-- Bouton après -->
-    <div id="bouton_apres"></div>
 
 </section>
