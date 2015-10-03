@@ -1,21 +1,26 @@
+@font-face {
+
+    font-family: cocomat;
+    src: url(cocomat_light.ttf);
+}
+
 #periodic_display {
 
     height: 100%;
-    background-color: wheat;
+    background-color: red;
+    text-align: center;
+    font-family: cocomat;
 
 }
 
 #periodic_display h2 {
 
-    width: 100%;
-    font-size: 1.5em;
     margin: 0px;
-    text-transform: uppercase;
-    color: dimgrey;
-    font-style: normal;
+    padding: 20px;
+    color: wheat;
     font-weight: 200;
-    padding-top: 20px;  
-    text-align: center;
+    font-size: 42px;
+    text-transform: uppercase;
 }
 
 #periodic_display #background {
@@ -38,13 +43,13 @@
 
 #periodic_display #menu a span {
 
-    vertical-align: bottom;
+    vertical-align: top;
 }
 
 #periodic_display #menu a span, #periodic_display #menu a i {
     
     display: inline-block;
-    color: dimgrey;
+    color: wheat;
 }
 
 #periodic_display #content{

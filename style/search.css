@@ -1,25 +1,31 @@
+@font-face {
+
+    font-family: cocomat;
+    src: url(cocomat_light.ttf);
+}
+
 #formulaire_recherche {
 
     height: 100%;
     background-color: whitesmoke;
     text-align: center;
+    font-family: cocomat;
 }
 
 #formulaire_recherche h2 {
 
     margin: 0px;
     padding: 20px;
-    color: #333;
-    font-style: normal;
+    color: red;
     font-weight: 200;
-    font-size: 1.5em;
+    font-size: 42px;
 }
 
 
 #submit_to_periodic_display {
 
-    display: block;
-    margin: auto;
+   
+    
     padding: 10px;
     font-size: 16px;
     border-radius: 5px;
@@ -27,8 +33,8 @@
     color: white;
     text-shadow: 0 -1px 0 rgba(0,0,0,0.15);
     background-color: #60b044;
-    background-image: linear-gradient(#8add6d, #60b044);
-    border-color: #5ca941;
+    background-image: linear-gradient(to bottom, #b34332 5%, #a73f2d 100%);
+    border-color: #7a2a1d;
     vertical-align: middle;
     cursor: pointer;
     margin-top: 10px;
@@ -81,11 +87,11 @@
     height: 19px;
     padding: 5px;
     font-size: 16px;
-    border: solid thin #377D6A;
+    border: solid thin #B8A686;
     border-top-left-radius: 3px;
     border-bottom-left-radius: 3px;
-    color: white;
-    background-color: #7AB893;
+    color: #56595c;
+    background-color: wheat;
     text-align: right;
 }
 
@@ -95,6 +101,10 @@
     margin: auto;
 }
 
+#formulaire_recherche table tr {
+    
+    height: 100px;
+}
 
 #formulaire_recherche table td {
     
@@ -103,10 +113,28 @@
     padding: 0;
     margin: 0;
     padding-bottom: 5px;
-}
-
-#formulaire_recherche table td:nth-child(odd) {
-
     text-align: right;
+    width: 350px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

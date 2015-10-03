@@ -6,11 +6,15 @@
     <div id="bouton_avant"></div>
     
     <!-- Affichage des informations -->
-    <div id="informations_periode">
-        <div id="fiche_gauche"></div>
-        <div id="fiche_centre"></div>
-        <div id="fiche_droite"></div>
-    </div>
+    <table>
+    
+        <tr><td>Type d'éolienne le plus propice : </td><td>Type A</td></tr>
+        
+        <tr><td>Diamètre d'éolienne le plus propice : </td><td>Type A</td></tr>
+        
+        <tr><td>Le foyer le mieux alimenté : </td><td>Type A</td></tr>
+        
+    </table>
     
     <!-- Bouton après -->
     <div id="bouton_apres"></div>

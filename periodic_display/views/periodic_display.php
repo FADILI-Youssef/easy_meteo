@@ -20,7 +20,7 @@
                 <i class="material-icons">search</i><span>modifier la recherche</span>
             </a>
             <a class="scrollTo" href="#general_display">
-                <span>informations générales</span><i class="material-icons">arrow_forward</i>
+                <span>affichage général</span><i class="material-icons">arrow_forward</i>
             </a>
         </div>
 

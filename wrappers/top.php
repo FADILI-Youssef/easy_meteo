@@ -33,7 +33,7 @@
             <section id="presentation">
                 <div id="background"></div>
                 <div id="presentation_text">
-                    <h2>Une analyse pertinante, à la hauteur de nos clients.</h2>
+                    <h2>Une analyse pertinente, à la hauteur de nos clients.</h2>
                     <h1>Bienvenue sur easy meteo</h1>
                     
                 </div>
