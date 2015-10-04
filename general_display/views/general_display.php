@@ -1,21 +1,31 @@
 <section id="general_display">
+    
+    
+    <img id="indication" src="wallpapers/sun.png" />
+    
     <!-- titre -->
-    <h2>AFFICHAGE GÉNÉRAL</h2>
+    <div id="content">
+        <h2>AFFICHAGE GÉNÉRAL</h2>
+
+        <div id="data">
+            <h3 id="titre_tableau">Période de Septembre à Octobre sur trois ans</h3>
+
+            <!-- Affichage des informations -->
+            <table border="0">
+
+                <tr><td>Type d'éolienne le plus propice : </td><td>Type A</td></tr>
+
+                <tr><td>Diamètre d'éolienne le plus propice : </td><td>Type A</td></tr>
+
+                <tr><td>Type de foyer le mieux alimenté : </td><td>Type A</td></tr>
+
+                <tr><td>Vitesse moyenne du vent : </td><td>Type A</td></tr>
+                
+                <tr><td>Durée moyenne d'insolation : </td><td>Type A</td></tr>
+
+            </table>
+        </div>
+    </div>
     
-    <!-- Bouton avant -->
-    <div id="bouton_avant"></div>
     
-    <!-- Affichage des informations -->
-    <table>
-    
-        <tr><td>Type d'éolienne le plus propice : </td><td>Type A</td></tr>
-        
-        <tr><td>Diamètre d'éolienne le plus propice : </td><td>Type A</td></tr>
-        
-        <tr><td>Le foyer le mieux alimenté : </td><td>Type A</td></tr>
-        
-    </table>
-    
-    <!-- Bouton après -->
-    <div id="bouton_apres"></div>
 </section>
