@@ -13,6 +13,8 @@
         <script src="resources/jquery-1.11.3.min.js"></script>
         <script src="resources/jquery-ui.min.js"></script>
         <script type="text/javascript" src="style/smooth_scroll.js" ></script>
+        <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+        <script type="text/javascript">stLight.options({publisher: "5565ece2-98e5-4321-b0df-75db9aa059e2", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     </head>
     

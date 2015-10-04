@@ -39,7 +39,7 @@
 #general_display table td:nth-child(odd) {
 
     font-weight: bold;
-    width: 300px;
+    width: 310px;
     text-align: right;
 }
 

@@ -17,9 +17,13 @@
 
                 <tr><td>Diamètre d'éolienne le plus propice : </td><td>Type A</td></tr>
 
+                <tr><td>Energie produite par ce type d'éolienne : </td><td>Type A</td></tr>
+                
                 <tr><td>Type de foyer le mieux alimenté : </td><td>Type A</td></tr>
 
                 <tr><td>Vitesse moyenne du vent : </td><td>Type A</td></tr>
+                
+                <tr><td>Température moyenne : </td><td>Type A</td></tr>
                 
                 <tr><td>Durée moyenne d'insolation : </td><td>Type A</td></tr>
 
