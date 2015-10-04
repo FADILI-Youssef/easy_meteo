@@ -1,5 +1,48 @@
+@font-face {
+
+    font-family: cocomat;
+    src: url(cocomat_light.ttf);
+}
+
 #partager {
 
     height: 25%;
     background-color: darkslategray;
+    color: wheat;
+    padding: 5%;
+    font-family: cocomat;
+}
+
+.info_block {
+
+    position: relative;
+    height: 100%;
+    display: inline-block;
+    vertical-align: top;
+    border-left: solid thin wheat;
+    padding-left: 2%;
+    margin-right: 2%;
+}
+
+#cr_authors * {
+
+    display: block;
+}
+
+#share h2, #contact h2, #cr_authors h2 {
+
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#cr_authors span span, #contact ul span {
+
+    display: inline-block;
+    font-family: sans-serif;
+}
+
+#cr_authors ul, #contact ul {
+
+    font-size: 14px;
+    list-style-type: none;
 }

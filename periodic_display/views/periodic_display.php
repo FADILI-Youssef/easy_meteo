@@ -8,8 +8,6 @@
         <!-- Titre -->
         <h2>affichage par période</h2>
         
-        <!-- Bouton avant -->
-        <div id="bouton_avant"></div>
 
         <!-- Affichage des informations -->
         <div id="carousel">
@@ -24,8 +22,6 @@
             </a>
         </div>
 
-        <!-- Bouton après -->
-        <div id="bouton_apres"></div>
     </div>
 
 </section>
