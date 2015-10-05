@@ -10,8 +10,9 @@
         <link rel="stylesheet" href="style/periodic_display.css" />
         <link rel="stylesheet" href="style/general_display.css" />
         <link rel="stylesheet" href="style/bottom.css" />
-        <script src="resources/jquery-1.11.3.min.js"></script>
-        <script src="resources/jquery-ui.min.js"></script>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+        <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
         <script type="text/javascript" src="style/smooth_scroll.js" ></script>
         <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
         <script type="text/javascript">stLight.options({publisher: "5565ece2-98e5-4321-b0df-75db9aa059e2", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>

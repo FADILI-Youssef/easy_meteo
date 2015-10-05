@@ -20,9 +20,14 @@ function affichageSuggestions() {
     if ((xhrArray[0].readyState == 4) && (xhrArray[0].status == 200)) {
         var resultat = JSON.parse(xhrArray[0].responseText);
         
+        var liste = new Array();
+        for (var i = 0, l = resultat.length; i < l; i++) {
+                liste[i] = resultat[i][1];
+        }
         
-        $( "#ville" ).autocomplete({
-            source: resultat
-        });
+      
+    $( "#ville" ).autocomplete({
+      source: liste
+    });
 	}
 }
