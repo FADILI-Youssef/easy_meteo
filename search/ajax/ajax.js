@@ -16,9 +16,13 @@ function linkAjax() {
 }
 
 function affichageSuggestions() {
-
+    //window.location.href = 'search/ajax/ajax.php?ville=mar';
     if ((xhrArray[0].readyState == 4) && (xhrArray[0].status == 200)) {
-        //var resultat = JSON.parse(xhrArray[0].responseText);
-        alert('abc');
+        var resultat = JSON.parse(xhrArray[0].responseText);
+        
+        
+        $( "#ville" ).autocomplete({
+            source: resultat
+        });
 	}
 }
