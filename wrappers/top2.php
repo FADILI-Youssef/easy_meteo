@@ -26,7 +26,6 @@
         <header id="header">
             
             <nav>
-                <a class="scrollTo" href="#header" id="logo"><img src="images/logo.png" width="45" height="45" /></a>
                 <table>
                     <td>
                         <a class="scrollTo" href="#formulaire_recherche">

@@ -17,7 +17,7 @@ foreach (glob(ABSORPTION_MODULE.'models/*.php') as $filename) include_once($file
 foreach (glob(ABSORPTION_MODULE.'daos/*.php') as $filename) include_once($filename);
 
 //Inclus la partie top du site
-include_once(WRAPPERS.'top.php');
+include_once(WRAPPERS.'top2.php');
 
 //Inclus le module d'absorbtion de données
 include_once(ABSORPTION_MODULE.'controllers/absorber.php');
