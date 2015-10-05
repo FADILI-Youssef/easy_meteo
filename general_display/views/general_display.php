@@ -13,6 +13,8 @@
             <!-- Affichage des informations -->
             <table border="0">
 
+                <tr><td>Station la plus proche trouvée : </td><td>Type A</td></tr>
+                
                 <tr><td>Type d'éolienne le plus propice : </td><td>Type A</td></tr>
 
                 <tr><td>Diamètre d'éolienne le plus propice : </td><td>Type A</td></tr>

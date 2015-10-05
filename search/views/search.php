@@ -37,7 +37,7 @@
             <tr>
                 
                  <!-- Diamètre éolienne -->
-               <td><label for="ville">Ville/code postal</label><input type="text" id="ville" /></td>
+               <td><label for="ville">Ville/code postal</label><input type="text" id="ville" onkeyup="linkAjax();" /></td>
                  
 
                 <!-- Période -->
