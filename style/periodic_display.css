@@ -1,26 +1,8 @@
-@font-face {
-
-    font-family: cocomat;
-    src: url(cocomat_light.ttf);
-}
-
 #periodic_display {
 
     height: 100%;
-    background-color: red;
-    text-align: center;
-    font-family: cocomat;
-
-}
-
-#periodic_display h2 {
-
-    margin: 0px;
-    padding: 20px;
-    color: wheat;
-    font-weight: 200;
-    font-size: 42px;
-    text-transform: uppercase;
+    width: 100%;
+    background-color: black;
 }
 
 #periodic_display #background {
@@ -28,60 +10,58 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background-image: url(../wallpapers/periodic_display_wallpaper.jpeg);
+    background-size: cover;
     opacity: 0.3;
-    z-index: 0;
-}
-
-#periodic_display #menu a span {
-
-    height: 24px;
-    text-decoration: none;
-    vertical-align: top;
-    
-}
-
-#periodic_display #menu a span {
-
-    vertical-align: top;
-}
-
-#periodic_display #menu a span, #periodic_display #menu a i {
-    
-    display: inline-block;
-    color: wheat;
-}
-
-#periodic_display #content{
-
-    position: relative;
-    text-align: center;
-    z-index: 2;
-    width: 100%;
-    height: 100%;
-}
-
-#periodic_display #carousel, #periodic_display #menu {
-    
-    display: inline-block;
+    background-color: #4384c4;
+    z-index: 1;
 }
 
 #periodic_display #carousel {
 
-    position: relative;
-    display: block;
-    width: 70%;
-    height: 60%;
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    border: solid thin black;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    z-index: 2;
 }
 
-#periodic_display #menu a {
+#periodic_display #car_c {
 
-    margin-right: 10px;
-    margin-left: 10px;
-    text-decoration: none;
+    display: inline-block;
+    width: 25%;
+    height: 70%;
+    margin-right: 1%;
+    margin-left: 1%;
+    
+    background-color: white;
+    border: solid 1px black;
+    border-radius: 0px;
+    transform: translateY(30%);
 }
+
+#periodic_display #car_d, #periodic_display #car_g {
+
+    display: inline-block;
+    width: 17.5%;
+    height: 49%;
+    z-index: 3;
+    
+    background-color: white;
+    border: solid 1px black;
+    border-radius: 0px;
+    transform: translateY(30%);
+}
+
+#periodic_display #c_next, #periodic_display #c_prev {
+
+    cursor: pointer;
+    margin: 20px;
+}
+
+#periodic_display #car_d, #periodic_display #car_g, #periodic_display #car_c {
+    
+    transition: height 1s, width 1s;
+}
+
+#periodic_display #car_d
+

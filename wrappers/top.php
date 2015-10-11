@@ -5,8 +5,8 @@
     <head>
         <meta charset="utf-8" />
         <title>Easy meteo</title>
-        <link rel="stylesheet" href="style/top2.css" />
-        <link rel="stylesheet" href="style/search2.css" />
+        <link rel="stylesheet" href="style/top.css" />
+        <link rel="stylesheet" href="style/search.css" />
         <link rel="stylesheet" href="style/periodic_display.css" />
         <link rel="stylesheet" href="style/general_display.css" />
         <link rel="stylesheet" href="style/bottom.css" />

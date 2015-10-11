@@ -1,12 +1,87 @@
 #formulaire_recherche {
-
-    background-color: wheat;
     height: 100%;
     width: 100%;
 }
 
-#formulaire_recherche h2 {
+#formulaire_recherche fieldset {
+    
+    display: inline-block;
+    vertical-align: top;
+    min-width: 200px;
 
-    margin: 0px;
-    color: #5291c4;
+    background-color: #F1F1F1;
+    border: solid 1px #CCCCCC;
+    border-radius: 2px;
+    box-shadow: 0 1px 0 #FFFFFF;
+    padding: 15px;
+}
+
+#formulaire_recherche legend {
+
+    color: #999999;
+    font-size: 18px;
+    padding: 0 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#formulaire_recherche select, #formulaire_recherche input {
+
+    margin: 5px;
+    
+    background-color: white;
+    border-radius: 4px;
+    border: solid 1px #CCCCCC;
+    padding: 6px;
+    min-width: 200px;
+    font-size: 14px;
+}
+
+
+#formulaire_recherche fieldset div {
+
+    text-align: right;
+}
+
+#formulaire_recherche #submit_to_periodic_display {
+
+    
+    cursor: pointer;
+    vertical-align: bottom;
+    background-color: #cfddef;
+}
+
+#formulaire_recherche #submit_to_periodic_display:active {
+    
+    background-color: #426494;
+    color: white;
+}
+
+#formulaire_recherche .wrapper {
+    
+    width: 90%;
+    display: block;
+    margin: auto;
+    transform: translateY(85%);
+}
+
+#formulaire_recherche .wrapper td {
+
+    text-align: right;
+    vertical-align: top;
+}
+
+#formulaire_recherche .wrapper fieldset {
+
+    text-align: center;
+}
+
+#formulaire_recherche #submit_search_td {
+
+    vertical-align: bottom;
+}
+
+#formulaire_recherche #ville_td {
+
+    text-align: center;
 }

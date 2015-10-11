@@ -1,0 +1,80 @@
+#periodic_display {
+
+    height: 100%;
+    width: 100%;
+    background-color: black;
+}
+
+#periodic_display #background {
+
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    opacity: 0.3;
+    background-color: #4384c4;
+    z-index: 1;
+}
+
+#periodic_display #content {
+    
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    z-index: 2;
+}
+
+#periodic_display #carousel {
+
+    transform: translateY(40%);
+}
+
+#periodic_display #suiv, #periodic_display #prec {
+
+    cursor: pointer;
+}
+
+#periodic_display #carousel img, #periodic_display #carousel .c_droite, #periodic_display #carousel .c_gauche, #periodic_display #carousel .c_centre, #periodic_display #carousel .c_0 {
+
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#periodic_display #carousel .c_droite, #periodic_display #carousel .c_gauche {
+
+    width: 220px;
+    height: 220px;
+    background-color: white;
+    padding: 10px;
+    border: solid thin black;
+    border-radius: 5px;
+}
+
+#periodic_display #carousel .c_centre {
+
+    width: 450px;
+    height: 450px;
+    background-color: white;
+    border: solid thin black;
+    border-radius: 5px;
+}
+
+#periodic_display #carousel .c_0 {
+
+    display: none;
+}
+
+#carousel h1, #carousel h2 {
+
+    font-weight: normal;
+    font-size: 24px;
+}
+
+#carousel table {
+
+    position: relative;
+    display: block;
+    margin: auto;
+    transform: translateY(60%);
+}

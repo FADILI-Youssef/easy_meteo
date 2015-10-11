@@ -8,6 +8,7 @@ html, body {
    
     margin: 0px;
     font-family: cocomat;
+    overflow-y: hidden;
 }
 
 header {
@@ -24,6 +25,7 @@ header nav {
     width: 100%;
     min-width: 900px;
     background-color: #e5e6de;
+    border-bottom: solid 1px #CCCCCC;
     z-index: 5;
 }
 
@@ -33,7 +35,7 @@ header nav {
     text-transform: uppercase;
     letter-spacing: 1px;
     text-decoration: none;
-    padding: 10px;
+    padding: 20px;
 }
 
 header nav table {
@@ -55,6 +57,8 @@ header nav table a {
     color: black;
     background-color: #cfddef;
     height: 90px;
+    border-radius: 3px;
+    transition: background-color 0.7s;
 }
 
 
@@ -138,4 +142,40 @@ header nav table td {
     font-size: 11px;
 }
 
+#presentation_text p {
+
+    color: wheat;
+}
+
+#acceuil {
+
+    background-color: #426494;
+    color: white;
+}
+
+#acceuil a {
+
+    
+}
+
+#etape1 {
+}
+
+#etape2 {
+
+    background-color: #efefef;
+    color: #969696;
+}
+
+#etape3 {
+    
+    background-color: #efefef;
+    color: #969696;
+}
+
+#etape4 {
+    
+    background-color: #efefef;
+    color: #969696;
+}
 

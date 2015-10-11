@@ -32,4 +32,5 @@
 
     </body>
 
+<script type="text/javascript">initCarousel();</script>
 </html>

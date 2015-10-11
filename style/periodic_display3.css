@@ -1,0 +1,85 @@
+#periodic_display {
+
+    height: 100%;
+    width: 100%;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+#periodic_display .c_navigation {
+
+    transform: translateY(750%);
+    margin-right: 30px;
+    margin-left: 30px;
+    cursor: pointer;
+}
+
+#periodic_display table {
+
+    display: inline-block;
+    transform: translateY(65%);
+    border-radius: 15px;
+    border-collapse: collapse;
+    margin: auto;
+}
+
+#periodic_display table thead tr {
+
+    background-color: #b9c9fd;
+    color: #354a89;
+    border-top-right-radius: 20px;
+}
+
+#periodic_display table tr {
+
+    background-color: #e8edff;
+    border-bottom: solid thin white;
+}
+
+#periodic_display table td, #periodic_display table th {
+
+    padding: 15px;
+    margin: 0px;
+}
+
+#periodic_display table tbody th {
+
+    text-align: left;
+}
+
+#periodic_display table tfoot tr td {
+
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    font-style: italic;
+}
+
+#periodic_display table tfoot tr td a {
+
+    text-decoration: none;
+}
+
+#periodic_display table tfoot tr td a:visited {
+
+    color: blue;
+}
+
+#periodic_display #hg {
+    
+    border-top-left-radius: 20px;
+}
+
+#periodic_display #hd {
+
+    border-top-right-radius: 20px;
+}
+
+#periodic_display table td {
+
+    color: #8b8ead;
+}
+
+#periodic_display table caption {
+
+    margin-bottom: 10px;
+}

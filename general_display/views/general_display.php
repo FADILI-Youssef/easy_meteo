@@ -31,16 +31,7 @@
 
             </table>
         </div>
-        
-        <div id="menu">
-            <a class="scrollTo" href="#formulaire_recherche">
-                <i class="material-icons">search</i><span>modifier la recherche</span>
-            </a>
-            <a class="scrollTo" href="#periodic_display">
-                <i class="material-icons">arrow_backward</i><span>affichage par période</span>
-            </a>
-            
-        </div>
+     
         
     </div>
     
