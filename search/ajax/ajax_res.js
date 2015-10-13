@@ -64,6 +64,7 @@ function affichageSuggestions_res() {
         document.getElementById('dim_res').innerHTML = resultat['duree_moyenne_insolation'];
         document.getElementById('temp_res').innerHTML = resultat['temperature_moyenne'];
         document.getElementById('vit_res').innerHTML = resultat['vitesse_vent'];
+        alert(resultat['energie_produite']);
         //alert(resultat['climats'][0]);
 	}
 }

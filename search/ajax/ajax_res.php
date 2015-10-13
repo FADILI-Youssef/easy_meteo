@@ -55,6 +55,24 @@
     $temperature_m = number_format(($temperature_m/($nbJours * 24)), '2', ',', ' ');
     $vitesseVent_m = number_format(($vitVent_m/($nbJours * 24)), '2', ',', ' ');
 
+
+    //Calcule l'énergie produite par jour
+    $energies = array();
+    for ($i = 0, $l = count($vitessesVent); $i < $l; $i++) {
+        
+        $vitesseJour = 0;
+        
+        for ($j = 0, $k = count($vitessesVent[$i]); $j < $k; $j++) {
+            $vitesseJour += $vitessesVent[$i][$j];
+        }
+        
+        $vitesseJourMoy =  $vitesseJour / 24;
+        $energie = (16/27)/(1/2)* pow(9, 2) * pow($vitesseJourMoy, 3);
+        array_push($energies, $vitesseJourMoy, $climats[$i]->getDate());
+    }
+            
+    
+
     header('Content-Type: application/json; charset="utf-8"');
 
     //Renvoie le resultat
@@ -63,5 +81,6 @@
     $resultat['duree_moyenne_insolation'] = $heures_m.' h '.$minutes_m.' m';
     $resultat['temperature_moyenne'] = $temperature_m.'°C';
     $resultat['vitesse_vent'] = $vitesseVent_m.' Km/h';
+    $resultat['energie_produite'] = $energies;
     echo json_encode($resultat);
 ?>
