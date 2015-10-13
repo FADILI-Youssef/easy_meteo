@@ -42,6 +42,32 @@ class TypeEolienneDao {
         
         return $eoliennes;
     }
+    
+    public function getById($id) {
+        
+        //Prépare la requête
+        $requete = 'select * from type_eolienne where id = ?';
+        
+        //Envoie la requête
+        $connection = DbConnection::getInstance()->connect();
+        $statement = $connection->prepare($requete);
+        $statement->bindValue(1, $id);
+        $statement->execute();
+        
+        //Mets en forme la reponse
+        $typeEolienne = null;
+        if ($res = $statement->fetch())
+            $typeEolienne = new TypeEolienne(
+                                            $res['id'],
+                                            $res['diametre_min'],
+                                            $res['diametre_max'],
+                                            $res['puissance_min'],
+                                            $res['puissance_max'],
+                                            $res['nom']
+                                            );
+        
+        return $typeEolienne;    
+    }
 }
 
 ?>

@@ -44,7 +44,7 @@ function linkAjax_res() {
                     args += '&sdi=' + nomSeuilDureeInsolation;
                     args += '&station=' + villeName;
             
-            
+            alert(nomDiametreEolienne);
 			xhrArray[1].open('GET', 'search/ajax/ajax_res.php?' + args, true);
 			xhrArray[1].onreadystatechange = affichageSuggestions_res;
 			xhrArray[1].send(null);

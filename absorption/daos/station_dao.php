@@ -42,7 +42,33 @@ class StationDao {
         
         return $stations;
     }
-
+    
+    public function getById($id) {
+        
+        //Prépare la requête
+        $requete = 'select * from station where id = ?';
+        
+        //Envoie la requête
+        $connection = DbConnection::getInstance()->connect();
+        $statement = $connection->prepare($requete);
+        $statement->bindValue(1, $id);
+        $statement->execute();
+        
+        //Mets en forme le résultat
+        $station = null;
+        if ($res = $statement->fetch())
+            $station = new Station($res['id'],
+                                   $res['code_postal'],
+                                   $res['nom'],
+                                   $res['altitude'],
+                                   $res['longitude'],
+                                   $res['latitude'], 
+                                   $res['dernier_mois'],
+                                   $res['commentaire']
+                                  );
+        
+        return $station;
+    }
 
 }
 

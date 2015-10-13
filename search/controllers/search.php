@@ -21,7 +21,7 @@
     //Mets en forme les options eolienne
     $optionsTypes = '<option></option>';
     foreach ($typesEoliennes as $type)
-        $optionsTypes .= '<option id="'.$type->getId().'">'.$type->getNom().'</option>';
+        $optionsTypes .= '<option value="'.$type->getId().'">'.$type->getNom().'</option>';
 
     //Inclus la vue de la recherche
     include_once(SEARCH_MODULE.'views/search.php');

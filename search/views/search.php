@@ -8,12 +8,12 @@
             
                 <div>
                     <label for="type_eolienne">Type éolienne</label>
-                    <select id="type_eolienne"><?php echo $optionsTypes; ?></select>
+                    <select id="type_eolienne" onchange="linkAjax_diametre()"><?php echo $optionsTypes; ?></select>
                 </div>
             
                 <div>
                     <label for="diametre_eolienne">Diamètre éolienne</label>
-                    <input type="range" id="diametre_eolienne" />
+                    <input type="range" id="diametre_eolienne" step="1" />
                 </div>
         </fieldset></td>
                 
