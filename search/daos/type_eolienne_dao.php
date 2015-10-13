@@ -15,22 +15,32 @@ class TypeEolienneDao {
         return self::$instance;
     }
     
-    //Récupère le nom des types éolienne
-    public function getNoms() {
+    //Récupère les éoliennes
+    public function getAll() {
     
         //Prépare la requête
-        $requete = 'select nom from type_eolienne';
+        $requete = 'select * from type_eolienne';
         
-        //Envoie la requête
-        $noms = array();
+        //Lance la requête
+        $eoliennes = array();
         $connection = DbConnection::getInstance()->connect();
         $statement = $connection->prepare($requete);
         $statement->execute();
         
-        while ($res = $statement->fetch())
-            array_push($noms, $res['nom']);
+        while ($res = $statement->fetch()) {
         
-        return $noms;
+            array_push($eoliennes, new TypeEolienne(
+                                                    $res['id'],
+                                                    $res['diametre_min'],
+                                                    $res['diametre_max'],
+                                                    $res['puissance_min'],
+                                                    $res['puissance_max'],
+                                                    $res['nom']
+                                                    )
+                      );
+        }
+        
+        return $eoliennes;
     }
 }
 

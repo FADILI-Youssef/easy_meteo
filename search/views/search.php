@@ -8,7 +8,7 @@
             
                 <div>
                     <label for="type_eolienne">Type éolienne</label>
-                    <select id="type_eolienne"><option></option><option>Premier test</option><option>Second test</option></select>
+                    <select id="type_eolienne"><?php echo $optionsTypes; ?></select>
                 </div>
             
                 <div>

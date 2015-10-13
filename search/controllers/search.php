@@ -16,9 +16,13 @@
             .'<option>Décembre</option>';
 
     $typeEolienneDao = TypeEolienneDao::getInstance();
-    $nomsEoliennes = $typeEolienneDao->getNoms();
+    $typesEoliennes = $typeEolienneDao->getAll();
 
-    
+    //Mets en forme les options eolienne
+    $optionsTypes = '<option></option>';
+    foreach ($typesEoliennes as $type)
+        $optionsTypes .= '<option id="'.$type->getId().'">'.$type->getNom().'</option>';
+
     //Inclus la vue de la recherche
     include_once(SEARCH_MODULE.'views/search.php');
 
