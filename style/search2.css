@@ -85,3 +85,8 @@
 
     text-align: center;
 }
+
+#formulaire_recherche input[type=range] {
+
+    vertical-align: middle;
+}

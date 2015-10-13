@@ -20,6 +20,10 @@
         <script type="text/javascript" src="search/ajax/ajax.js"></script>
         <script type="text/javascript" src="style/js_style.js"></script>
         <script type="text/javascript" src="style/animate_carousel.js"></script>
+        <script type="text/javascript" src="search/scripts_js/months.js"></script>
+        <script type="text/javascript" src="search/ajax/ajax_res.js"></script>
+        <script type="text/javascript" src="search/ajax/ajax_station.js"></script>
+        <script type="text/javascript" src="search/scripts_js/distance.js"></script>
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     </head>
     
