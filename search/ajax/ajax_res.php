@@ -73,10 +73,10 @@
         
         $vitesseJourMoy =  $vitesseJour / 24;
         $energie = (16/27)/(1/2)* pow(9, 2) * pow($vitesseJourMoy, 3);
-        array_push($energies, $vitesseJourMoy, $climats[$i]->getDate());
+        array_push($energies, array($vitesseJourMoy, $climats[$i]->getDate()));
     }
             
-    //Calcule les consommation
+    //Calcule la demande en consommation
     $consosChauffageDao = ConsommationChauffageDao::getInstance();
     $consosChauffage = $consosChauffageDao->getAll();
 
@@ -84,19 +84,42 @@
     $consosChauffeEau = $consosChauffeEauDao->getAll();
 
     $demande = array();
-    $alimentation = array();
+    $traceDemande = '';
     foreach ($consosChauffeEau as $consoChauffeEau) {
     
         $conso = 0;
         $conso = $consoChauffeEau->getConsommation();
         $conso += $consosChauffage[$consoChauffeEau->getTypeAppartement() - 1]->getConsommation();
         $conso /= 365;
-        array_push($demande, array($conso,
-                                   $consoChauffeEau->getTypeAppartement(),
-                                   $consoChauffeEau->getNbMenage()
-                                  )
+        $traceDemande .= $conso.' - ';
+        array_push($demande, new ConsommationTotale($consoChauffeEau->getNbMenage(),
+                                                    $consoChauffeEau->getTypeAppartement(),
+                                                    $conso,
+                                                    0
+                                                    )
                   );
     }
+
+
+    //Définis pour chaque jour qu'est-ce qui peut être alimenté
+    $alimentation = array();
+    for ($i = 0; $i < $nbJours; $i++) {
+        $temp_alim = array();
+        for ($j = 0, $k = count($demande); $j < $k; $j++) {
+
+            $demande[$j]->setNbSatisfaits(floor($energies[$i][0] / $demande[$j]->getConsommation()));
+            array_push($temp_alim,
+                       $demande[$j]->getNbMenage(),
+                       $demande[$j]->getTypeAppartement(),
+                       $demande[$j]->getConsommation(),
+                       $demande[$j]->getNbSatisfaits(),
+                       $climats[$i]->getDate()
+                      );
+        }
+        array_push($alimentation, $temp_alim);
+    }
+        
+
 
     header('Content-Type: application/json; charset="utf-8"');
 
@@ -108,5 +131,7 @@
     $resultat['vitesse_vent'] = $vitesseVent_m.' Km/h';
     $resultat['energie_produite'] = $energies;
     $resultat['demande_consommation'] = $demande;
+    $resultat['resultat_brut'] = $alimentation;
+    $resultat['fadilicorp'] = $traceDemande;
     echo json_encode($resultat);
 ?>

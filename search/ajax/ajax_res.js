@@ -64,6 +64,12 @@ function affichageSuggestions_res() {
         document.getElementById('dim_res').innerHTML = resultat['duree_moyenne_insolation'];
         document.getElementById('temp_res').innerHTML = resultat['temperature_moyenne'];
         document.getElementById('vit_res').innerHTML = resultat['vitesse_vent'];
-        alert(resultat['demande_consommation']);
+        alert(resultat['fadilicorp']);
+        
+        var nbSat = '';
+        for (var i = 0, l = resultat['resultat_brut'].length; i < l; i++)
+            nbSat += ' - ' + resultat['resultat_brut'][i][3];
+        
+        alert(nbSat);
 	}
 }
