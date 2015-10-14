@@ -5,6 +5,11 @@
     include_once('../../tools/constants.php');
     include_once('../models/climat.php');
     include_once('../daos/climat_dao.php');
+    include_once('../../absorption/models/consommation_chauffage.php');
+    include_once('../../absorption/models/consommation_chauffe_eau.php');
+    include_once('../../absorption/daos/consommation_chauffage_dao.php');
+    include_once('../../absorption/daos/consommation_chauffe_eau_dao.php');
+    include_once('../../absorption/models/consommation_totale.php');
 
     //Récupère les données de la recherche
     $typeEolienne = $_GET['typeeol'];
@@ -71,7 +76,27 @@
         array_push($energies, $vitesseJourMoy, $climats[$i]->getDate());
     }
             
+    //Calcule les consommation
+    $consosChauffageDao = ConsommationChauffageDao::getInstance();
+    $consosChauffage = $consosChauffageDao->getAll();
+
+    $consosChauffeEauDao = ConsommationChauffeEauDao::getInstance();
+    $consosChauffeEau = $consosChauffeEauDao->getAll();
+
+    $demande = array();
+    $alimentation = array();
+    foreach ($consosChauffeEau as $consoChauffeEau) {
     
+        $conso = 0;
+        $conso = $consoChauffeEau->getConsommation();
+        $conso += $consosChauffage[$consoChauffeEau->getTypeAppartement() - 1]->getConsommation();
+        $conso /= 365;
+        array_push($demande, array($conso,
+                                   $consoChauffeEau->getTypeAppartement(),
+                                   $consoChauffeEau->getNbMenage()
+                                  )
+                  );
+    }
 
     header('Content-Type: application/json; charset="utf-8"');
 
@@ -82,5 +107,6 @@
     $resultat['temperature_moyenne'] = $temperature_m.'°C';
     $resultat['vitesse_vent'] = $vitesseVent_m.' Km/h';
     $resultat['energie_produite'] = $energies;
+    $resultat['demande_consommation'] = $demande;
     echo json_encode($resultat);
 ?>

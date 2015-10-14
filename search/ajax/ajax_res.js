@@ -44,7 +44,7 @@ function linkAjax_res() {
                     args += '&sdi=' + nomSeuilDureeInsolation;
                     args += '&station=' + villeName;
             
-            alert(nomDiametreEolienne);
+            
 			xhrArray[1].open('GET', 'search/ajax/ajax_res.php?' + args, true);
 			xhrArray[1].onreadystatechange = affichageSuggestions_res;
 			xhrArray[1].send(null);
@@ -64,7 +64,6 @@ function affichageSuggestions_res() {
         document.getElementById('dim_res').innerHTML = resultat['duree_moyenne_insolation'];
         document.getElementById('temp_res').innerHTML = resultat['temperature_moyenne'];
         document.getElementById('vit_res').innerHTML = resultat['vitesse_vent'];
-        alert(resultat['energie_produite']);
-        //alert(resultat['climats'][0]);
+        alert(resultat['demande_consommation']);
 	}
 }
