@@ -109,16 +109,34 @@
 
             $demande[$j]->setNbSatisfaits(floor($energies[$i][0] / $demande[$j]->getConsommation()));
             array_push($temp_alim,
-                       $demande[$j]->getNbMenage(),
+                       array($demande[$j]->getNbMenage(),
                        $demande[$j]->getTypeAppartement(),
                        $demande[$j]->getConsommation(),
                        $demande[$j]->getNbSatisfaits(),
-                       $climats[$i]->getDate()
+                       $climats[$i]->getDate())
                       );
         }
         array_push($alimentation, $temp_alim);
     }
+
+    //Organise les resultats par années
+    $annees = array();
+    $temp_annee = array();
+    $anneeEnCours = 2010;
+    for ($i = 0, $l = $nbJours; $i < $l; $i++) {
         
+        if (split('-', $alimentation[$i][0][4])[0] == $anneeEnCours) {
+            array_push($temp_annee, $alimentation[$i]);
+        } else {
+            $anneeEnCours++;
+            array_push($annees, $temp_annee);
+            $temp_annee = array();
+            array_push($temp_annee, $alimentation[$i]);
+        }
+    }
+    array_push($annees, $temp_annee);
+    //Calcul des résultats sur toutes les années prises en compte
+    $nbAnnees = count($annees);
 
 
     header('Content-Type: application/json; charset="utf-8"');
@@ -132,6 +150,6 @@
     $resultat['energie_produite'] = $energies;
     $resultat['demande_consommation'] = $demande;
     $resultat['resultat_brut'] = $alimentation;
-    $resultat['fadilicorp'] = $traceDemande;
+    $resultat['fadilicorp'] = $annees[0][0][0][4];
     echo json_encode($resultat);
 ?>

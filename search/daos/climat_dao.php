@@ -24,7 +24,7 @@ class ClimatDao {
         $dateFin = $annee.'-'.($moisDeb + $moisFin - 1).'-1';
         
         //Prépare la requête
-        $requete = 'select * from climat where date > ? and date < ? and id_station = ?';
+        $requete = 'select * from climat where date >= ? and date <= ? and id_station = ?';
         
         //Envoie la requête
         $climats = array();
