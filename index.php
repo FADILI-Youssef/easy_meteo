@@ -25,7 +25,7 @@ include_once(WRAPPERS.'top2.php');
 include_once(ABSORPTION_MODULE.'controllers/absorber.php');
 
 //Inclus le module de recherche
-include_once(SEARCH_MODULE.'controllers/search.php');
+include_once(SEARCH_MODULE.'controllers/search2.php');
 
 //Inclus le module d'affichage par période
 include_once(PERIODIC_DISPLAY_MODULE.'controllers/periodic_display.php');
