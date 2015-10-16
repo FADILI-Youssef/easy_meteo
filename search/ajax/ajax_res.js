@@ -1,5 +1,6 @@
 var resultatFinal = null;
-var compteur = 0;
+var position = 0;
+var mois_car = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Aout', 'Septembre', 'Octobre', 'Novembre', 'Décembre'];
 
 function linkAjax_res() {
 
@@ -84,15 +85,80 @@ function affichageSuggestions_res() {
                      if (temp_last_result[y] == null)
                          temp_last_result[y] = 0;
                      
-                     temp_last_result[y] += resultat['fadilicorp'][numJour][y][3];
+                     temp_last_result[y] += Math.floor(resultat['fadilicorp'][numJour][y][3]);
                      
                  }
              }
             
             lastResult[i] = temp_last_result;
         }
-        
+  
         resultatFinal = lastResult;
-            
+        
+        //Mets en place les résultats
+        afficherLignesTab();
 	}
+}
+
+function afficherLignesTab() {
+    
+    var lignes = new Array(); 
+    lignes[0] = document.getElementById('m_1');
+    lignes[1] = document.getElementById('m_2');
+    lignes[2] = document.getElementById('m_3');
+    lignes[3] = document.getElementById('m_4');
+    
+    var decalage = 0;
+    for (var i = 0, l = lignes.length; i < l; i++) {
+    
+        var cases = lignes[i].getElementsByTagName('td');
+        
+        for (var j = 0, k = cases.length; j < k; j++) {
+        
+            
+            if (i == 2) {
+                if (j == 0)
+                    cases[j].innerHTML = '-';
+                else 
+                    cases[j].innerHTML = resultatFinal[position][j + decalage - 1];
+            } else if (i == 3) {
+                if (j == 0)
+                    cases[j].innerHTML = '-';
+                else
+                    cases[j].innerHTML = resultatFinal[position][j + decalage - 2];
+            } else {
+                cases[j].innerHTML = resultatFinal[position][j + decalage];
+            }
+                
+        }
+        decalage += 4;
+    }
+  
+}
+
+function c_suiv(source) {
+    if (position != 11) {
+        if (position == 10) {
+            source.style.opacity = 0.3;
+        } 
+        
+        position++;
+        afficherLignesTab();
+        document.getElementById('titre_periodes').innerHTML = '<strong>' + mois_car[position] + '</strong>';
+        document.getElementById('c_prec_button').style.opacity = 1;
+    }
+}
+
+function c_prec(source) {
+    
+    if (position != 0) {
+        if (position == 1) {
+            source.style.opacity = 0.3;
+        } 
+        
+        position--;
+        afficherLignesTab();
+        document.getElementById('titre_periodes').innerHTML = '<strong>' + mois_car[position] + '</strong>';
+        document.getElementById('c_suiv_button').style.opacity = 1;
+    }
 }

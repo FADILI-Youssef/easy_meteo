@@ -72,8 +72,10 @@
         }
         
         $vitesseJourMoy =  $vitesseJour / 24;
-        $energie = (16/27)/(1/2)* pow(9, 2) * pow($vitesseJourMoy, 3);
-        array_push($energies, array($energie, $climats[$i]->getDate()));
+        $vitesseMS = $vitesseJourMoy / 3.6;
+        $energie = (16/27)/(1/2)* pow(9/2, 2) * pow($vitesseMS, 3); //En watt
+        $energieKWH = ($energie / 1000) * 24;
+        array_push($energies, array($energieKWH, $climats[$i]->getDate()));
     }
             
     //Calcule la demande en consommation
@@ -94,7 +96,7 @@
         $traceDemande .= $conso.' - ';
         array_push($demande, new ConsommationTotale($consoChauffeEau->getNbMenage(),
                                                     $consoChauffeEau->getTypeAppartement(),
-                                                    $conso,
+                                                    $conso, //Kwh/jour
                                                     0
                                                     )
                   );
@@ -107,7 +109,7 @@
         $temp_alim = array();
         for ($j = 0, $k = count($demande); $j < $k; $j++) {
 
-            $demande[$j]->setNbSatisfaits(($energies[$i][0] / 1000) / $demande[$j]->getConsommation());
+            $demande[$j]->setNbSatisfaits(($energies[$i][0]) / $demande[$j]->getConsommation());
             array_push($temp_alim,
                        array($demande[$j]->getNbMenage(),
                        $demande[$j]->getTypeAppartement(),
@@ -168,8 +170,8 @@
                 ($annees[0][$i + $decalage[0]][$j][3]
                 + $annees[1][$i + $decalage[1]][$j][3]
                 + $annees[2][$i + $decalage[2]][$j][3]
-                + $annees[3][$i + $decalage[3]][$j][0]
-                + $annees[4][$i + $decalage[4]][$j][0]) / $nbAnnees,
+                + $annees[3][$i + $decalage[3]][$j][3]
+                + $annees[4][$i + $decalage[4]][$j][3]) / $nbAnnees,
                 $annees[0][$i][$j][4]
             
             );

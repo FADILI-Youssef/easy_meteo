@@ -47,6 +47,11 @@
     text-align: left;
 }
 
+#periodic_display table tbody td {
+
+    text-align: center;
+}
+
 #periodic_display table tfoot tr td {
 
     border-bottom-left-radius: 20px;
