@@ -73,9 +73,9 @@ function affichageSuggestions_res() {
         
         var numJour = -1;
         var lastResult = new Array();
-        var temp_last_result = new Array();
+        
         for (var i = 0, l = joursParMois.length; i < l; i++) {
-                
+             var temp_last_result = new Array(); 
              for (var j = 0, k = joursParMois[i]; j < k; j++) {
                  
                  numJour++;
@@ -109,29 +109,22 @@ function afficherLignesTab() {
     lignes[3] = document.getElementById('m_4');
     
     var decalage = 0;
-    for (var i = 0, l = lignes.length; i < l; i++) {
-    
-        var cases = lignes[i].getElementsByTagName('td');
+    for (var i = 0; i < 4; i++) {
         
-        for (var j = 0, k = cases.length; j < k; j++) {
+        lignes[0].getElementsByTagName('td')[i].innerHTML = resultatFinal[position][i + decalage];
+        lignes[1].getElementsByTagName('td')[i].innerHTML = resultatFinal[position][i + 1 + decalage];
         
+        if (i == 0) {
             
-            if (i == 2) {
-                if (j == 0)
-                    cases[j].innerHTML = '-';
-                else 
-                    cases[j].innerHTML = resultatFinal[position][j + decalage - 1];
-            } else if (i == 3) {
-                if (j == 0)
-                    cases[j].innerHTML = '-';
-                else
-                    cases[j].innerHTML = resultatFinal[position][j + decalage - 2];
-            } else {
-                cases[j].innerHTML = resultatFinal[position][j + decalage];
-            }
-                
+            lignes[2].getElementsByTagName('td')[i].innerHTML = '-';
+            lignes[3].getElementsByTagName('td')[i].innerHTML = '-';
+        } else {
+            
+            lignes[2].getElementsByTagName('td')[i].innerHTML = resultatFinal[position][i + 2 + decalage];
+            lignes[3].getElementsByTagName('td')[i].innerHTML = resultatFinal[position][i + 3 + decalage];
         }
-        decalage += 4;
+    
+        decalage += 1;
     }
   
 }

@@ -45,7 +45,7 @@
         </tbody>
 
         <tfoot>
-            <tr><td colspan="5">Les données exploitées sont tirées de <a href="http://www.prevision-meteo.ch/" target="_blank">http://www.prevision-meteo.ch/</a></td></tr>
+            <tr><td colspan="5">Les résultats présentent le nombre de foyers alimentés durant le mois courant.</td></tr>
         </tfoot>
     </table>
     <img id="c_suiv_button" class="c_navigation" src="images/c_next.png" height="50" width="50" onclick="c_suiv(this);" />
