@@ -1,3 +1,6 @@
+var resultatFinal = null;
+var compteur = 0;
+
 function linkAjax_res() {
 
     xhrArray[1] = getXmlHttpRequest();
@@ -65,9 +68,31 @@ function affichageSuggestions_res() {
         document.getElementById('temp_res').innerHTML = resultat['temperature_moyenne'];
         document.getElementById('vit_res').innerHTML = resultat['vitesse_vent'];
         
-        alert(resultat['fadilicorp']);
+        var joursParMois = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
         
+        var numJour = -1;
+        var lastResult = new Array();
+        var temp_last_result = new Array();
+        for (var i = 0, l = joursParMois.length; i < l; i++) {
+                
+             for (var j = 0, k = joursParMois[i]; j < k; j++) {
+                 
+                 numJour++;
+                 
+                 for (var y = 0, z = 14; y < z; y++) {
+                     
+                     if (temp_last_result[y] == null)
+                         temp_last_result[y] = 0;
+                     
+                     temp_last_result[y] += resultat['fadilicorp'][numJour][y][3];
+                     
+                 }
+             }
             
+            lastResult[i] = temp_last_result;
+        }
+        
+        resultatFinal = lastResult;
             
 	}
 }

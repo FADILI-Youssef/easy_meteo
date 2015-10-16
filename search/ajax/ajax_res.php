@@ -73,7 +73,7 @@
         
         $vitesseJourMoy =  $vitesseJour / 24;
         $energie = (16/27)/(1/2)* pow(9, 2) * pow($vitesseJourMoy, 3);
-        array_push($energies, array($vitesseJourMoy, $climats[$i]->getDate()));
+        array_push($energies, array($energie, $climats[$i]->getDate()));
     }
             
     //Calcule la demande en consommation
@@ -107,7 +107,7 @@
         $temp_alim = array();
         for ($j = 0, $k = count($demande); $j < $k; $j++) {
 
-            $demande[$j]->setNbSatisfaits(floor($energies[$i][0] / $demande[$j]->getConsommation()));
+            $demande[$j]->setNbSatisfaits(($energies[$i][0] / 1000) / $demande[$j]->getConsommation());
             array_push($temp_alim,
                        array($demande[$j]->getNbMenage(),
                        $demande[$j]->getTypeAppartement(),
@@ -139,7 +139,23 @@
 
     //Calcul des résultats sur toutes les années prises en compte
     $resultatNet = array();
+    $decalage = array(0, 0, 0, 0, 0);
     for ($i = 0, $l = count($annees[0]); $i < $l; $i++) {
+        
+        if ( (split('-', $annees[0][$i][0][4] == '')[1] == '02') &&  (split('-', $annees[0][$i][0][4] == '')[2] == '29'))
+            $decalage[0] = 1;
+        
+        if ( (split('-', $annees[1][$i][0][4] == '')[1] == '02') &&  (split('-', $annees[1][$i][0][4] == '')[2] == '29'))
+            $decalage[1] = 1;
+        
+        if ( (split('-', $annees[2][$i][0][4] == '')[1] == '02') &&  (split('-', $annees[2][$i][0][4] == '')[2] == '29'))
+            $decalage[2] = 1;
+        
+        if ( (split('-', $annees[3][$i][0][4] == '')[1] == '02') &&  (split('-', $annees[3][$i][0][4] == '')[2] == '29'))
+            $decalage[3] = 1;
+        
+        if ( (split('-', $annees[4][$i][0][4] == '')[1] == '02') &&  (split('-', $annees[4][$i][0][4] == '')[2] == '29'))
+            $decalage[4] = 1;
         
         $temp_resnet_over = array();
         for ($j = 0; $j < 14; $j++) {
@@ -149,11 +165,11 @@
                 $annees[0][$i][$j][0],
                 $annees[0][$i][$j][1],
                 $annees[0][$i][$j][2],
-                ($annees[0][$i][$j][3]
-                + $annees[1][$i][$j][3]
-                + $annees[2][$i][$j][3]
-                + $annees[3][$i][$j][0]
-                + $annees[0][$i][$j][0]) / 5,
+                ($annees[0][$i + $decalage[0]][$j][3]
+                + $annees[1][$i + $decalage[1]][$j][3]
+                + $annees[2][$i + $decalage[2]][$j][3]
+                + $annees[3][$i + $decalage[3]][$j][0]
+                + $annees[4][$i + $decalage[4]][$j][0]) / $nbAnnees,
                 $annees[0][$i][$j][4]
             
             );
@@ -176,6 +192,6 @@
     $resultat['energie_produite'] = $energies;
     $resultat['demande_consommation'] = $demande;
     $resultat['resultat_brut'] = $alimentation;
-    $resultat['fadilicorp'] = $annees[0][0][0][4];
+    $resultat['fadilicorp'] = $resultatNet;
     echo json_encode($resultat);
 ?>
