@@ -66,6 +66,7 @@ function affichageSuggestions_res() {
         document.getElementById('vit_res').innerHTML = resultat['vitesse_vent'];
         
         alert(resultat['fadilicorp']);
+        
             
             
 	}

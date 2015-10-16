@@ -122,7 +122,7 @@
     //Organise les resultats par années
     $annees = array();
     $temp_annee = array();
-    $anneeEnCours = 2010;
+    $anneeEnCours = 2015 - $periode;
     for ($i = 0, $l = $nbJours; $i < $l; $i++) {
         
         if (split('-', $alimentation[$i][0][4])[0] == $anneeEnCours) {
@@ -135,8 +135,34 @@
         }
     }
     array_push($annees, $temp_annee);
-    //Calcul des résultats sur toutes les années prises en compte
     $nbAnnees = count($annees);
+
+    //Calcul des résultats sur toutes les années prises en compte
+    $resultatNet = array();
+    for ($i = 0, $l = count($annees[0]); $i < $l; $i++) {
+        
+        $temp_resnet_over = array();
+        for ($j = 0; $j < 14; $j++) {
+            
+            $temp_resnet_sub = array(
+            
+                $annees[0][$i][$j][0],
+                $annees[0][$i][$j][1],
+                $annees[0][$i][$j][2],
+                ($annees[0][$i][$j][3]
+                + $annees[1][$i][$j][3]
+                + $annees[2][$i][$j][3]
+                + $annees[3][$i][$j][0]
+                + $annees[0][$i][$j][0]) / 5,
+                $annees[0][$i][$j][4]
+            
+            );
+            
+            array_push($temp_resnet_over, $temp_resnet_sub);
+        }
+        
+        array_push($resultatNet, $temp_resnet_over);
+    }
 
 
     header('Content-Type: application/json; charset="utf-8"');
