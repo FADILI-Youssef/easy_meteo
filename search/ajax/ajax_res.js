@@ -2,7 +2,7 @@ var resultatFinal = null;
 var position = 0;
 var mois_car = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Aout', 'Septembre', 'Octobre', 'Novembre', 'Décembre'];
 
-function linkAjax_res() {
+function linkAjax_res(stationName) {
 
     xhrArray[1] = getXmlHttpRequest();
     
@@ -34,9 +34,8 @@ function linkAjax_res() {
             var seuilDureeInsolation = document.getElementById('seuil_duree_insolation');
             var nomSeuilDureeInsolation = seuilDureeInsolation.value;
             
-            var villeInput = document.getElementById('ville');
-            var villeName = villeInput.value;
             
+            alert(stationName);
             //Prépare les arguments
             var args = 'typeeol=' + nomTypeEolienne;
                     args += '&diameol=' + nomDiametreEolienne;
@@ -46,7 +45,7 @@ function linkAjax_res() {
                     args += '&svmv=' + nomSeuilVitesseVent;
                     args += '&st=' + nomSeuilTemperature;
                     args += '&sdi=' + nomSeuilDureeInsolation;
-                    args += '&station=' + villeName;
+                    args += '&station=' + stationName;
             
             
 			xhrArray[1].open('GET', 'search/ajax/ajax_res.php?' + args, true);
@@ -94,7 +93,6 @@ function affichageSuggestions_res() {
         }
   
         resultatFinal = lastResult;
-        
         //Mets en place les résultats
         afficherLignesTab();
 	}

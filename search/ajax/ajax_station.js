@@ -8,8 +8,8 @@ function linkAjax_station() {
             //Prépare les données récupérées  
             var villeInput = document.getElementById('ville');
             var villeName = villeInput.value;
-            
-			xhrArray[2].open('GET', 'search/ajax/ajax_station.php?ville' + villeName, true);
+      
+			xhrArray[2].open('GET', 'search/ajax/ajax_station.php?ville=' + villeName, true);
 			xhrArray[2].onreadystatechange = affichageSuggestions_station;
 			xhrArray[2].send(null);
             
@@ -23,6 +23,9 @@ function affichageSuggestions_station() {
     if ((xhrArray[2].readyState == 4) && (xhrArray[2].status == 200)) {
         var resultat = JSON.parse(xhrArray[2].responseText);
         
-        //alert(resultat);
+        var longitude = resultat['longitude'];
+        var latitude = resultat['latitude'];
+        
+        defCoord_mp(latitude, longitude);
 	}
 }

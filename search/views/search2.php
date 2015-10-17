@@ -71,7 +71,7 @@
             </fieldset></td>
                 
 
-             <td id="submit_search_td" colspan="2"><input id="submit_to_periodic_display" type="submit" value="Rechercher" onclick="setBeingVisited_s(); linkAjax_res();" /></td>
+             <td id="submit_search_td" colspan="2"><input id="submit_to_periodic_display" type="submit" value="Rechercher" onclick="setBeingVisited_s(); linkAjax_station();" /></td>
              
          </tr>
          

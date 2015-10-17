@@ -45,6 +45,24 @@ class VilleDao {
     
         return $villes;
     }
+    
+    public function getByNameOrCP($name) {
+        
+        //Prépare la requête
+        $requete = 'select * from ville where nom = ? or code_postal = ?';
+        
+        //Envoie la requête
+        $connection = DbConnection::getInstance()->connect();
+        $statement = $connection->prepare($requete);
+        $statement->bindValue(1, $name);
+        $statement->bindValue(2, $name);
+        $statement->execute();
+        
+        if ($res = $statement->fetch())
+            $ville = new Ville($res['id'], $res['nom'], $res['code_postal'], $res['longitude'], $res['latitude']);
+        
+        return $ville;
+    }
 
 }
 

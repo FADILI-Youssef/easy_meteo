@@ -10,7 +10,8 @@
         <link rel="stylesheet" href="style/periodic_display3.css" />
         <link rel="stylesheet" href="style/general_display.css" />
         <link rel="stylesheet" href="style/bottom.css" />
-        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
         <script src="//code.jquery.com/jquery-1.10.2.js"></script>
         <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
         <script type="text/javascript" src="style/smooth_scroll.js" ></script>
@@ -28,8 +29,8 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
     </head>
     
-    <body>
-
+    <body onload="initialiser_mp();">
+        <div id="carte" style="display: none;"></div>
         <header id="header">
             
             <nav>

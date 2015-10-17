@@ -12,7 +12,7 @@
             <!-- Affichage des informations -->
             <table border="0">
 
-                <tr><td>Station la plus proche trouvée : </td><td>-</td></tr>
+                <tr><td>Station la plus proche trouvée : </td><td id="station_plus_proche">-</td></tr>
                 
                 <tr><td>Type d'éolienne le plus propice : </td><td>-</td></tr>
 

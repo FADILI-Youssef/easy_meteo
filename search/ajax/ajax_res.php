@@ -73,7 +73,7 @@
         
         $vitesseJourMoy =  $vitesseJour / 24;
         $vitesseMS = $vitesseJourMoy / 3.6;
-        $energie = (16/27)/(1/2)* pow(9/2, 2) * pow($vitesseMS, 3); //En watt
+        $energie = (16/27)/(1/2)* pow($diametreEolienne/2, 2) * pow($vitesseMS, 3); //En watt
         $energieKWH = ($energie / 1000) * 24;
         array_push($energies, array($energieKWH, $climats[$i]->getDate()));
     }
@@ -195,5 +195,6 @@
     $resultat['demande_consommation'] = $demande;
     $resultat['resultat_brut'] = $alimentation;
     $resultat['fadilicorp'] = $resultatNet;
+    $resultat['diametre_test'] = $diametreEolienne;
     echo json_encode($resultat);
 ?>

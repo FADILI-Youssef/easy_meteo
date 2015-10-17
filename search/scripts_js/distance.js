@@ -2,7 +2,8 @@ var lat = null; var lng = null;
 			var station = new Array();
 			var stationProche =  null;   
 
-            function initialiser() {
+            function initialiser_mp() {
+            
                 var latlng = new google.maps.LatLng(46.5, 2.5);
                 var options = {
                     center: latlng,
@@ -15,24 +16,23 @@ var lat = null; var lng = null;
 				var StationParis = new google.maps.Marker({
 							position: new google.maps.LatLng(48.7219, 2.3524),
 							animation: google.maps.Animation.DROP,
-							title:"Paris",
+							title:"paris-orly",
 							map: carte
 							});
 							
 				var StationMarseille = new google.maps.Marker({
 							position: new google.maps.LatLng(43.4381, 5.2161),
 							animation: google.maps.Animation.DROP,
-							title:"Marseille/Marignane",
+							title:"marseille",
 							map: carte
 							});
 							
 				var StationBordeaux = new google.maps.Marker({
 							position: new google.maps.LatLng(44.8332, -0.7193),
 							animation: google.maps.Animation.DROP,
-							title:"Bordeaux/Merignac",
+							title:"bordeaux-merignac",
 							map: carte
 							});			
-				
 				
 				if (lat != null && lng!= null){
 					station.push(StationParis);
@@ -45,8 +45,8 @@ var lat = null; var lng = null;
 							stationProche = station[i];
 						}
 						else{
-							if (convertDistance(lat, lat2, lng, lng2) < 
-								convertDistance(lat, stationProche.getPosition().lat(), lng, stationProche.getPosition().lng())){
+							if (convertDistance_mp(lat, lat2, lng, lng2) < 
+								convertDistance_mp(lat, stationProche.getPosition().lat(), lng, stationProche.getPosition().lng())){
 								stationProche = station[i];
 							}
 						}
@@ -58,20 +58,22 @@ var lat = null; var lng = null;
 							map: carte
 							});	
 					//alert("La plus proche: "+stationProche.getTitle());
-					document.getElementById("labelDistance").innerHTML = stationProche.getTitle();
+                    document.getElementById('station_plus_proche').innerHTML = stationProche.getTitle();
+                    linkAjax_res(stationProche.getTitle());
 				}
             }
 			
-			function defCoord(){
+			function defCoord_mp(add1, add2){
+
 				var coord = new Object();
-				lat = document.getElementById("lat").value;
-				lng = document.getElementById("long").value;
+				lat = add1;
+				lng = add2;
 				coord.latitude = lat;
 				coord.longitude = lng;
-				initialiser();
+				initialiser_mp();
 			}
 			
-			function convertDistance(lat1, lat2, lon1, lon2){
+			function convertDistance_mp(lat1, lat2, lon1, lon2){
 				var R = 6371;
 				var x1 = lat1 * Math.PI / 180;
 				var x2 = lat2 * Math.PI / 180;
