@@ -69,6 +69,23 @@ class StationDao {
         
         return $station;
     }
+    
+    public function getIdByName($name) {
+    
+        //Prépare la requête
+        $requete = 'select * from station where nom = ?';
+        
+        //Envoie la requête
+        $connection = DbConnection::getInstance()->connect();
+        $statement = $connection->prepare($requete);
+        $statement->bindValue(1, $name);
+        $statement->execute();
+        
+        if ($res = $statement->fetch()) 
+            return $res['id'];
+        else return null;
+        
+    }
 
 }
 

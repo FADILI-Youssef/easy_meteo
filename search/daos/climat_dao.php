@@ -16,7 +16,7 @@ class ClimatDao {
     }
     
     //Méthodes
-    public function getClimatPeriode($moisDeb, $moisFin, $nbAnnes) {
+    public function getClimatPeriode($moisDeb, $moisFin, $nbAnnes, $idStationPlusProche) {
         
         //Prépare les données
         $annee = date('Y');
@@ -32,7 +32,7 @@ class ClimatDao {
         $statement = $connection->prepare($requete);
         $statement->bindValue(1, $dateDebut);
         $statement->bindValue(2, $dateFin);
-        $statement->bindValue(3, 1);
+        $statement->bindValue(3, $idStationPlusProche);
         $statement->execute();
         
         while ($res = $statement->fetch())

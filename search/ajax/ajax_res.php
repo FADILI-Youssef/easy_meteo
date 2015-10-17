@@ -5,6 +5,8 @@
     include_once('../../tools/constants.php');
     include_once('../models/climat.php');
     include_once('../daos/climat_dao.php');
+    include_once('../../absorption/models/station.php');
+    include_once('../../absorption/daos/station_dao.php');
     include_once('../../absorption/models/consommation_chauffage.php');
     include_once('../../absorption/models/consommation_chauffe_eau.php');
     include_once('../../absorption/daos/consommation_chauffage_dao.php');
@@ -20,11 +22,17 @@
     $seuilVitesseVent = $_GET['svmv'];
     $seuilTemperature = $_GET['st'];
     $seuilDureeInsolation = $_GET['sdi'];
-    $ville = $_GET['station'];
+    $stationProche = $_GET['station'];
+
+
+    //Recherche l'id de la station la plus proche
+    $stationDao = StationDao::getInstance();
+    $idStationPlusProche = $stationDao->getIdByName($stationProche);
+
 
     //Produits les resultats
     $climatDao = ClimatDao::getInstance();
-    $climats = $climatDao->getClimatPeriode($moisDebut, $moisFin, $periode);
+    $climats = $climatDao->getClimatPeriode($moisDebut, $moisFin, $periode, $idStationPlusProche);
 
     //Calcule les résultats
     $nbJours = count($climats);
@@ -195,6 +203,6 @@
     $resultat['demande_consommation'] = $demande;
     $resultat['resultat_brut'] = $alimentation;
     $resultat['fadilicorp'] = $resultatNet;
-    $resultat['diametre_test'] = $diametreEolienne;
+    $resultat['test'] = $idStationPlusProche;
     echo json_encode($resultat);
 ?>

@@ -35,7 +35,7 @@ function linkAjax_res(stationName) {
             var nomSeuilDureeInsolation = seuilDureeInsolation.value;
             
             
-            alert(stationName);
+       
             //Prépare les arguments
             var args = 'typeeol=' + nomTypeEolienne;
                     args += '&diameol=' + nomDiametreEolienne;

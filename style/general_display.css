@@ -107,7 +107,8 @@
     text-decoration: none;
 }
 
-#dit_res, #dim_res, #temp_res, #vit_res {
+#dit_res, #dim_res, #temp_res, #vit_res, #station_plus_proche {
 
     font-family: sans-serif;
+    text-transform: uppercase;
 }
