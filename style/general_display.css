@@ -107,7 +107,7 @@
     text-decoration: none;
 }
 
-#dit_res, #dim_res, #temp_res, #vit_res, #station_plus_proche {
+#dit_res, #dim_res, #temp_res, #vit_res, #station_plus_proche, #ener_prop_moy, #energie_prop_moy_mois {
 
     font-family: sans-serif;
     text-transform: uppercase;

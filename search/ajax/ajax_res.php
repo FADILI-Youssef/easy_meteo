@@ -71,6 +71,7 @@
 
     //Calcule l'énergie produite par jour
     $energies = array();
+    $energiePropMoy = 0;
     for ($i = 0, $l = count($vitessesVent); $i < $l; $i++) {
         
         $vitesseJour = 0;
@@ -82,10 +83,16 @@
         $vitesseJourMoy =  $vitesseJour / 24;
         $vitesseMS = $vitesseJourMoy / 3.6;
         $energie = (16/27)/(1/2)* pow($diametreEolienne/2, 2) * pow($vitesseMS, 3); //En watt
+        $energiePropMoy += $energie;
         $energieKWH = ($energie / 1000) * 24;
         array_push($energies, array($energieKWH, $climats[$i]->getDate()));
     }
             
+    $energiePropMoy = $energiePropMoy / $periode;
+    $energiePropMoy_mois = $energiePropMoy / 12;
+    $energiePropMoy = number_format(($energiePropMoy / 1000), '2', ',', ' ');
+    $energiePropMoy_mois = number_format(($energiePropMoy_mois / 1000), '2', ',', ' ');
+
     //Calcule la demande en consommation
     $consosChauffageDao = ConsommationChauffageDao::getInstance();
     $consosChauffage = $consosChauffageDao->getAll();
@@ -203,6 +210,7 @@
     $resultat['demande_consommation'] = $demande;
     $resultat['resultat_brut'] = $alimentation;
     $resultat['fadilicorp'] = $resultatNet;
-    $resultat['test'] = $idStationPlusProche;
+    $resultat['energie_prop_moy'] = $energiePropMoy.' kw/an';
+    $resultat['energie_prop_moy_mois'] = $energiePropMoy_mois.' kw/an';
     echo json_encode($resultat);
 ?>

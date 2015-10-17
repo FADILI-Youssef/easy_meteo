@@ -67,6 +67,8 @@ function affichageSuggestions_res() {
         document.getElementById('dim_res').innerHTML = resultat['duree_moyenne_insolation'];
         document.getElementById('temp_res').innerHTML = resultat['temperature_moyenne'];
         document.getElementById('vit_res').innerHTML = resultat['vitesse_vent'];
+        document.getElementById('ener_prop_moy').innerHTML = resultat['energie_prop_moy'];
+        document.getElementById('energie_prop_moy_mois').innerHTML = resultat['energie_prop_moy_mois'];
         
         var joursParMois = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
         
